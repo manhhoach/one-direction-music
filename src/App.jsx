@@ -1,9 +1,22 @@
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import AppLayout from './ui/AppLayout'
+import Home from './pages/Home'
+import Band from './pages/Band'
+import Music from './pages/Music'
+
 function App() {
 
   return (
-    <div>
-      App
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route index element={<Navigate relative to='home' />}></Route>
+          <Route path='home' element={<Home />}></Route>
+          <Route path='music' element={<Music />}></Route>
+          <Route path='band' element={<Band />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
