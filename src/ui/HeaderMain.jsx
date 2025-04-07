@@ -6,11 +6,11 @@ const { Header } = Layout
 export default function HeaderMain() {
    return (
       <>
-         <Header className="sticky flex top-0 justify-center z-100">
+         <Header className="sticky flex top-0 justify-center z-100 !bg-black">
             <Link className="link-to-home" to='/home'></Link>
          </Header>
-         <Header>
-            <Menu mode="horizontal" theme="dark" className="w-full h-full justify-center gap-20">
+         <Header className="!bg-black">
+            <Menu mode="horizontal" theme="dark" className="!bg-black w-full h-full justify-center gap-20">
                <Menu.Item key="music">
                   <Link
                      to="/music"
@@ -33,4 +33,3 @@ export default function HeaderMain() {
 
    )
 }
-

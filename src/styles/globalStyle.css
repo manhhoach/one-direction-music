@@ -33,6 +33,28 @@
    width: 200px;
    height: 100%;
    margin: 0 auto;
-   background: url('./../../public/images/1d-logo.png') no-repeat center center;
+   background: url('/images/1d-logo.png') no-repeat center center;
    background-size: contain;
+}
+
+
+/*footer*/
+
+.icon-footer {
+   color: white !important;
+   width: 4rem;
+   height: auto;
+}
+
+.icon-footer:hover {
+   color: gray !important;
+}
+
+.button-footer {
+   color: white !important;
+   font-size: 1rem;
+}
+
+.button-footer:hover {
+   color: gray !important;
 }

@@ -6,9 +6,9 @@ const { Content } = Layout
 
 export default function AppLayout() {
    return (
-      <Layout>
+      <Layout className="!min-h-screen flex flex-col">
          <HeaderMain />
-         <Content>
+         <Content className="flex-1">
             <Outlet />
          </Content>
          <FooterMain>
