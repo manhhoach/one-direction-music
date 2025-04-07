@@ -2,11 +2,17 @@
 
 :root {
    --font-cousine: 'Cousine', monospace;
+   --font-playfair: 'Playfair Display', serif;
+   --font-times: 'Times New Roman', serif;
 }
 
 
 .font-cousine {
    font-family: var(--font-cousine);
+}
+
+.font-times {
+   font-family: var(--font-times);
 }
 
 
@@ -57,4 +63,11 @@
 
 .button-footer:hover {
    color: gray !important;
+}
+
+
+.article-intro {
+   font-family: var(--font-playfair);
+   font-weight: '700';
+   font-size: 5rem;
 }
