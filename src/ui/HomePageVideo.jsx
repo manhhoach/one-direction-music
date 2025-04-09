@@ -22,8 +22,16 @@ export default function HomePageVideo() {
 
             </div>
             <div className="w-1/2">
-               <div className='w-full flex items-center justify-center h-full'>
-                  <BiRightArrow onClick={() => setIsModalOpen(true)} cursor={'pointer'} color='white' className='w-1/2 h-1/2' />
+               <div onClick={() => setIsModalOpen(true)} className="cursor-pointer overflow-hidden w-full flex items-center justify-center h-full group relative transition-all duration-300 hover:bg-white/30">
+                  <BiRightArrow
+                     color="white"
+                     className="w-1/2 h-1/2 group-hover:translate-x-full group-hover:opacity-0 transition-all duration-300"
+                  />
+                  <span
+                     className="absolute opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 text-black font-bold text-[15rem] cursor-pointer font-cousine"
+                  >
+                     Play
+                  </span>
                </div>
             </div>
          </div>
