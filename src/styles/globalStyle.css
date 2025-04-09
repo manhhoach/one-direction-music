@@ -71,3 +71,7 @@
    font-weight: '700';
    font-size: 5rem;
 }
+
+.modal-video .ant-modal-content {
+   padding: unset !important;
+}
