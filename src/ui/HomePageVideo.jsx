@@ -11,11 +11,11 @@ export default function HomePageVideo() {
 
          <div className="absolute top-0 left-0 w-full h-full flex">
             <div className="w-1/2 bg-white/30">
-               <div className="w-full flex items-center justify-center h-full flex-col">
-                  <span className="text-5xl font-semibold text-black font-cousine">
+               <div className="w-full h-full flex items-center justify-center flex-col">
+                  <span className="text-5xl font-semibold text-black font-cousine text-center">
                      Watch One Direction’s
                   </span>
-                  <span className="text-5xl font-bold text-black font-cousine">
+                  <span className="text-5xl font-bold text-black font-cousine text-center">
                      History video now...
                   </span>
                </div>
