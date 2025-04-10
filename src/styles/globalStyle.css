@@ -1,10 +1,33 @@
 @import "tailwindcss";
 
+
+@font-face {
+   font-family: 'Source Code Pro';
+   src: url('/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf');
+}
+
+@font-face {
+   font-family: 'Cousine';
+   src: url('/fonts/Cousine/Cousine-Regular.ttf');
+}
+
+@font-face {
+   font-family: 'Oswald';
+   src: url('/fonts/Oswald/static/Oswald-Regular.ttf');
+}
+
+
+@font-face {
+   font-family: 'Playfair';
+   src: url('/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf');
+}
+
 :root {
-   --font-cousine: 'Cousine', monospace;
-   --font-playfair: 'Playfair Display', serif;
-   --font-times: 'Times New Roman', serif;
-   --font-source-code-pro: 'Source Code Pro', serif;
+   --font-cousine: 'Cousine', 'monospace';
+   --font-playfair: 'Playfair Display', 'sans-serif';
+   --font-times: 'Times New Roman', 'sans-serif';
+   --font-source-code-pro: 'Source Code Pro', 'sans-serif';
+   --font-oswald: 'Oswald', 'sans-serif';
 }
 
 * {
@@ -14,6 +37,11 @@
 .font-source-code-pro {
    font-family: var(--font-source-code-pro);
 }
+
+.font-oswald {
+   font-family: var(--font-oswald);
+}
+
 
 .font-cousine {
    font-family: var(--font-cousine);
