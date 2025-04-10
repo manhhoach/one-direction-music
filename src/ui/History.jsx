@@ -1,4 +1,4 @@
-import CustomButton from './../components/CustomButton'
+import CheckoutButton from '../components/CheckoutButton'
 
 export default function History() {
    return (
@@ -10,10 +10,10 @@ export default function History() {
          <img width={'25%'} height={'auto'} src="/images/history.png" alt="" className="pt-10 pb-30 relative" />
          <div className="w-2/3 flex justify-between items-center relative">
             <div className="flex flex-col justify-center items-center">
-               <div className="text-center font-cousine text-[2rem]">
+               <div className="text-center font-source-code-pro text-[2rem]">
                   One Direction's third UK single from
                </div>
-               <div className="text-center font-cousine text-[2rem]">
+               <div className="text-center font-source-code-pro text-[2rem]">
                   Made in the A.M.
                </div>
             </div>
@@ -21,7 +21,9 @@ export default function History() {
                <img width={'100%'} src="/images/history.jpg" alt="" />
             </div>
          </div>
-         <CustomButton />
+         <CheckoutButton>
+            Checkout the single
+         </CheckoutButton>
       </div>
    )
 }

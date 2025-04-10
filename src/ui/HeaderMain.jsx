@@ -6,7 +6,7 @@ const { Header } = Layout
 export default function HeaderMain() {
    return (
       <>
-         <Header className="sticky flex top-0 justify-center z-100 !bg-black">
+         <Header className="sticky flex top-0 justify-center !z-100 !bg-black">
             <Link className="link-to-home" to='/home'></Link>
          </Header>
          <Header className="!bg-black">

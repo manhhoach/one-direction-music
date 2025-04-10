@@ -4,10 +4,15 @@
    --font-cousine: 'Cousine', monospace;
    --font-playfair: 'Playfair Display', serif;
    --font-times: 'Times New Roman', serif;
+   --font-source-code-pro: 'Source Code Pro', serif;
 }
 
-*{
+* {
    z-index: 50;
+}
+
+.font-source-code-pro {
+   font-family: var(--font-source-code-pro);
 }
 
 .font-cousine {

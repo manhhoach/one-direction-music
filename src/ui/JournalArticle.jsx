@@ -7,7 +7,7 @@ export default function JournalArticle() {
             <div className="w-3/4 mt-15 mb-5">
                <img src="/images/1D_Logotype_Black.jpg" alt="Logo 1D" className="w-full h-full object-contain" />
             </div>
-            <span className="font-cousine text-2xl">Happy #10YearsOf1D Day!</span>
+            <span className="font-source-code-pro text-2xl">Happy #10YearsOf1D Day!</span>
          </div>
       </div>
    )
