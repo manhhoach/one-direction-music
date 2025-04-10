@@ -6,6 +6,9 @@
    --font-times: 'Times New Roman', serif;
 }
 
+*{
+   z-index: 50;
+}
 
 .font-cousine {
    font-family: var(--font-cousine);
@@ -74,4 +77,8 @@
 
 .modal-video .ant-modal-content {
    padding: unset !important;
+}
+
+.div-history {
+   background-image: url('/images/homepage-music-bg.png');
 }
