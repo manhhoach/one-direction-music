@@ -12,6 +12,11 @@
 }
 
 @font-face {
+   font-family: 'Codystar';
+   src: url('/fonts/Codystar/Codystar-Regular.ttf');
+}
+
+@font-face {
    font-family: 'Oswald';
    src: url('/fonts/Oswald/static/Oswald-Regular.ttf');
 }
@@ -28,10 +33,11 @@
    --font-times: 'Times New Roman', 'sans-serif';
    --font-source-code-pro: 'Source Code Pro', 'sans-serif';
    --font-oswald: 'Oswald', 'sans-serif';
+   --font-codystar: 'Codystar', 'sans-serif';
 }
 
 * {
-   z-index: 50;
+   z-index: 10;
 }
 
 .font-source-code-pro {
@@ -42,6 +48,9 @@
    font-family: var(--font-oswald);
 }
 
+.font-codystar {
+   font-family: var(--font-codystar);
+}
 
 .font-cousine {
    font-family: var(--font-cousine);
@@ -52,54 +61,50 @@
 }
 
 
-/*Header */
 
-.link-style {
-   color: white !important;
-   font-family: 'Cousine', monospace;
-   text-decoration: none;
-   font-size: 1rem;
-}
-
-.link-style:hover,
-.link-style:active {
-   font-weight: bold;
-   text-decoration: underline;
-   text-underline-offset: 0.5rem;
-   /* Khoảng cách gạch chân ra xa */
-
-}
-
-.link-to-home {
-   display: inline-block;
-   width: 200px;
+.div-faded {
+   position: absolute;
+   background-color: transparent;
+   width: 100%;
    height: 100%;
-   margin: 0 auto;
-   background: url('/images/1d-logo.png') no-repeat center center;
-   background-size: contain;
+   border: 6rem solid transparent;
+   transition: border-color 0.2s ease;
 }
 
-
-/*footer*/
-
-.icon-footer {
-   color: white !important;
-   width: 4rem;
-   height: auto;
+.div-faded .child-div-faded {
+   background-color: rgba(255, 233, 178, 0.9);
 }
 
-.icon-footer:hover {
-   color: gray !important;
+.time-faded {
+   font-family: var(--font-times);
+   font-size: 1.25rem;
+   position: absolute;
+   top: 2.5rem;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   z-index: 20 !important;
+   color: white;
+
 }
 
-.button-footer {
-   color: white !important;
-   font-size: 1rem;
+.container-div-faded:hover {
+   .div-faded {
+      border: 6rem solid rgba(255, 233, 178, 0.9);
+   }
+
+   .time-faded {
+      color: black;
+   }
+
+   .child-div-faded {
+      opacity: 0;
+   }
 }
 
-.button-footer:hover {
-   color: gray !important;
-}
 
 
 .article-intro {

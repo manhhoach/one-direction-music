@@ -1,0 +1,27 @@
+
+/*Header */
+
+.link-style {
+   color: white !important;
+   font-family: 'Cousine', monospace;
+   text-decoration: none;
+   font-size: 1rem;
+}
+
+.link-style:hover,
+.link-style:active {
+   font-weight: bold;
+   text-decoration: underline;
+   text-underline-offset: 0.5rem;
+   /* Khoảng cách gạch chân ra xa */
+
+}
+
+.link-to-home {
+   display: inline-block;
+   width: 200px;
+   height: 100%;
+   margin: 0 auto;
+   background: url('/images/1d-logo.png') no-repeat center center;
+   background-size: contain;
+}

@@ -5,7 +5,18 @@ export default function MadeInAM() {
       <div className="w-full !bg-white">
 
          <div className="w-full h-full flex">
-            <div className="w-1/2">
+            <div className="w-1/2 relative container-div-faded">
+               <div className="time-faded">
+                  23rd Sep 2015
+               </div>
+               <div className='div-faded'>
+                  <div className='child-div-faded font-codystar uppercase flex items-center justify-center w-full h-full text-center text-9xl'>
+                     Buy made<br />
+                     in the <br />
+                     a.m.
+                  </div>
+
+               </div>
                <img className="object-contain" width={'100%'} src="/images/madeinam.jpg" alt="" />
 
             </div>
