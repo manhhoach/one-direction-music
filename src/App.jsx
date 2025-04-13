@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<AppLayout />}>
-          <Route index element={<Navigate relative to='home' />}></Route>
+          <Route index element={<Navigate relative to='/home' />}></Route>
           <Route path='home' element={<Home />}></Route>
           <Route path='music' element={<Music />}></Route>
           <Route path='band' element={<Band />}></Route>
