@@ -1,4 +1,4 @@
-import CheckoutButton from '../components/CheckoutButton'
+import CheckoutLink from './../components/CheckoutLink'
 
 export default function History() {
    return (
@@ -21,9 +21,9 @@ export default function History() {
                <img width={'100%'} src="/images/history.jpg" alt="" />
             </div>
          </div>
-         <CheckoutButton>
+         <CheckoutLink>
             Checkout the single
-         </CheckoutButton>
+         </CheckoutLink>
       </div>
    )
 }

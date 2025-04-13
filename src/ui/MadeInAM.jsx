@@ -1,4 +1,4 @@
-import CheckoutButton from './../components/CheckoutButton'
+import CheckoutLink from './../components/CheckoutLink'
 
 export default function MadeInAM() {
    return (
@@ -40,9 +40,9 @@ export default function MadeInAM() {
                         Sign up for the 1D newsletter <br />
                         to get the latest news first!
                      </p>
-                     <CheckoutButton>
+                     <CheckoutLink target="_blank" href="https://forms.sonymusicfans.com/campaign/syco_onedirection_website_signup_2020/">
                         Subscribe now
-                     </CheckoutButton>
+                     </CheckoutLink>
                   </div>
                </div>
 
