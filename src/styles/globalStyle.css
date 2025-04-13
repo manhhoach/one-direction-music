@@ -29,7 +29,7 @@
 
 :root {
    --font-cousine: 'Cousine', 'monospace';
-   --font-playfair: 'Playfair Display', 'sans-serif';
+   --font-playfair: 'Playfair Display', 'serif';
    --font-times: 'Times New Roman', 'sans-serif';
    --font-source-code-pro: 'Source Code Pro', 'sans-serif';
    --font-oswald: 'Oswald', 'sans-serif';
@@ -76,8 +76,6 @@
 }
 
 .time-faded {
-   font-family: var(--font-times);
-   font-size: 1.25rem;
    position: absolute;
    top: 2.5rem;
    right: 0;
@@ -109,8 +107,8 @@
 
 .article-intro {
    font-family: var(--font-playfair);
-   font-weight: '700';
-   font-size: 5rem;
+   font-weight: bold;
+   font-size: 5.5rem;
 }
 
 .modal-video .ant-modal-content {
@@ -119,4 +117,20 @@
 
 .div-history {
    background-image: url('/images/homepage-music-bg.png');
+}
+
+
+.link-custom {
+   font-family: var(--font-source-code-pro);
+   text-decoration: underline;
+   text-transform: uppercase;
+   font-size: 1.5rem;
+   text-align: center;
+}
+
+.text-times{
+   font-family: var(--font-times);
+   font-size: 1.5rem;
+   text-align: center;
+   letter-spacing: 0.05em;
 }

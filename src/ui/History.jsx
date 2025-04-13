@@ -6,7 +6,7 @@ export default function History() {
          <div className='div-history top-10 absolute rounded-full w-300 h-300 !z-[-1] bg-cover bg-center'>
 
          </div>
-         <h1 className="text-3xl relative text-center font-times mt-10 underline">14th December 2015</h1>
+         <h1 className="mt-10 text-times">14th December 2015</h1>
          <img width={'25%'} height={'auto'} src="/images/history.png" alt="" className="pt-10 pb-30 relative" />
          <div className="w-2/3 flex justify-between items-center relative mb-10">
             <div className="flex flex-col justify-center items-center">

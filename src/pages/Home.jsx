@@ -3,6 +3,7 @@ import JournalArticle from '../ui/JournalArticle';
 import HomePageVideo from '../ui/HomePageVideo';
 import History from '../ui/History';
 import MadeInAM from '../ui/MadeInAM';
+import TweetPage from '../ui/TweetPage'
 
 export default function Home() {
    return (
@@ -12,6 +13,7 @@ export default function Home() {
          <HomePageVideo />
          <History />
          <MadeInAM />
+         <TweetPage />
       </>
    );
 }

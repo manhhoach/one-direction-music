@@ -6,7 +6,7 @@ export default function MadeInAM() {
 
          <div className="w-full h-full flex">
             <div className="w-1/2 relative container-div-faded">
-               <div className="time-faded">
+               <div className="time-faded text-times">
                   23rd Sep 2015
                </div>
                <div className='div-faded'>
@@ -23,7 +23,7 @@ export default function MadeInAM() {
             <div className="w-1/2 flex flex-col">
                <div className="flex flex-col items-center pt-5 pb-10">
                   <span className="text-xl">Subscribe</span>
-                  <span className="font-source-code-pro underline uppercase text-2xl">Newsletter</span>
+                  <span className="link-custom">Newsletter</span>
                </div>
                <div className='flex flex-col justify-around items-center flex-grow-1'>
                   <div className="w-5/6 font-oswald uppercase text-5xl sm:text-[6rem] text-center leading-none ">
