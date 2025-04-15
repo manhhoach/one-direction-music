@@ -25,7 +25,6 @@ export default function BandManager() {
       setLoading(true);
       try {
          const res = await getSingers({ page, pageSize });
-         console.log(res)
          setSingers(res.data.data);
          setPagination({
             page,

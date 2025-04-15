@@ -1,6 +1,7 @@
 import axios from 'axios';
-
-const API_BASE = 'https://localhost:7063/api/singer'; // hoặc thay bằng biến môi trường
+import config from '../config';
+const API_URL = config.apiUrl;
+const API_BASE = `${API_URL}/singer`; // hoặc thay bằng biến môi trường
 
 export const getSingers = (params) => {
   // params: { page, pageSize }
