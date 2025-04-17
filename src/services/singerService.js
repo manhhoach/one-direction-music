@@ -23,3 +23,7 @@ export const updateSinger = (id, data) => {
 export const deleteSinger = (id) => {
   return axios.delete(`${API_BASE}/${id}`);
 };
+
+export const getAllSingers = () => {
+  return axios.get(`${API_BASE}/get-all`);
+};
