@@ -4,11 +4,10 @@ import {
   Input,
   InputNumber,
   Button,
-  Typography,
 } from 'antd';
 import { uploadImage } from '../../../services/uploadService';
 import ImageUpload from '../../../components/ImageUpload';
-import NetworkList from '../../../components/NetworkList';
+import SocialNetworkListInput from '../../../components/SocialNetworkListInput';
 
 
 export default function SingerForm({ initialValues, onSubmit }) {
@@ -34,6 +33,7 @@ export default function SingerForm({ initialValues, onSubmit }) {
       setFileList([]);
     }
   }, [initialValues]);
+
 
   const handleUpload = async ({ file, onSuccess, onError }) => {
     try {
@@ -97,8 +97,10 @@ export default function SingerForm({ initialValues, onSubmit }) {
         />
       </Form.Item>
 
+      <Form.Item name='networks' label="Social Networks" rules={[{ required: false }]}>
+        <SocialNetworkListInput/>
+      </Form.Item>
 
-      <NetworkList />
 
       <Form.Item name="order" label="Order">
         <InputNumber min={0} style={{ width: '100%' }} />

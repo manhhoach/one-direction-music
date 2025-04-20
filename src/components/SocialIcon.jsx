@@ -1,11 +1,12 @@
-import { BiLogoFacebook, BiLogoTwitter, BiLogoYoutube, BiLogoInstagram } from 'react-icons/bi';
+import { BiLogoFacebook, BiLogoTwitter, BiLogoYoutube, BiLogoInstagram, BiLogoApple } from 'react-icons/bi';
 
 // Định nghĩa iconMap với các platform được hỗ trợ
 const iconMap = {
    facebook: BiLogoFacebook,
-   twitter: BiLogoTwitter,
+   x: BiLogoTwitter,
    instagram: BiLogoInstagram,
    youtube: BiLogoYoutube,
+   itunes: BiLogoApple
 };
 
 const SocialIcon = ({ icon, ...props }) => {

@@ -99,6 +99,7 @@ export default function BandManager() {
             onCancel={() => setIsModalOpen(false)}
             footer={null}
             destroyOnClose
+            width={'50vw'}
          >
             <SingerForm
                initialValues={selectedSinger}
