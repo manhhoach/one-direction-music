@@ -96,6 +96,7 @@ export default function AlbumManager() {
             onCancel={() => setIsModalOpen(false)}
             footer={null}
             destroyOnClose
+            className='!w-1/2'
          >
             <AlbumForm
                initialValues={selectedAlbum}

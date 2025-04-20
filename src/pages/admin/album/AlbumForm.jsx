@@ -8,8 +8,9 @@ import {
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import { uploadImage } from '../../../services/uploadService';
 import ImageUpload from '../../../components/ImageUpload';
-import NetworkList from '../../../components/NetworkList';
+import SocialNetworkListInput from '../../../components/SocialNetworkListInput';
 import dayjs from 'dayjs';
+import FanVideosInput from '../../../components/FanVideosInput';
 const { TextArea } = Input
 
 export default function AlbumForm({ initialValues, onSubmit }) {
@@ -113,60 +114,13 @@ export default function AlbumForm({ initialValues, onSubmit }) {
         />
       </Form.Item>
 
-      <Form.Item label="Photos (optional)">
-        <ImageUpload
-          fileList={photos.map((url, index) => ({
-            uid: `photo-${index}`,
-            name: `photo-${index}`,
-            status: 'done',
-            url,
-          }))}
-          handleUpload={async ({ file, onSuccess }) => {
-            const url = await uploadImage(file, 'band');
-            setPhotos((prev) => [...prev, url]);
-            onSuccess('ok');
-          }}
-          handleRemove={(file) => {
-            setPhotos((prev) => prev.filter((url) => url !== file.url));
-          }}
-        />
+      <Form.Item name='fanVideos' label="Fan Videos (YouTube URLs)">
+        <FanVideosInput />
       </Form.Item>
 
-      <Form.Item label="Fan Videos (YouTube URLs)">
-        {fanVideos.map((url, index) => (
-          <div key={index} className='flex mb-2 gap-2 items-center start'>
-            <Input
-              value={url}
-              onChange={(e) => {
-                const newList = [...fanVideos];
-                newList[index] = e.target.value;
-                setFanVideos(newList);
-              }}
-              placeholder="Enter YouTube URL"
-              style={{ flex: 1 }}
-            />
-            <Button
-              icon={<MinusCircleOutlined />}
-              onClick={() => {
-                const newList = fanVideos.filter((_, i) => i !== index);
-                setFanVideos(newList);
-              }}
-              danger
-            />
-          </div>
-        ))}
-
-        <Button
-          type="dashed"
-          onClick={() => setFanVideos([...fanVideos, ''])}
-          icon={<PlusOutlined />}
-          block
-        >
-          Add Fan Video
-        </Button>
+      <Form.Item name='linksToBuy' label="Links to buy" rules={[{ required: false }]}>
+        <SocialNetworkListInput />
       </Form.Item>
-
-      <NetworkList value={linksToBuy} onChange={setLinksToBuy} displayText='Links to buy' name='linksToBuy' />
 
       <Form.Item>
         <Button type="primary" htmlType="submit" block>
