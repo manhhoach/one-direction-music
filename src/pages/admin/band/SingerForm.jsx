@@ -4,16 +4,12 @@ import {
   Input,
   InputNumber,
   Button,
-  Upload,
-  Space,
   Typography,
 } from 'antd';
-import { PlusOutlined, DeleteOutlined, UploadOutlined } from '@ant-design/icons';
 import { uploadImage } from '../../../services/uploadService';
 import ImageUpload from '../../../components/ImageUpload';
 import NetworkList from '../../../components/NetworkList';
 
-const { Text } = Typography;
 
 export default function SingerForm({ initialValues, onSubmit }) {
   const [form] = Form.useForm();
@@ -41,7 +37,7 @@ export default function SingerForm({ initialValues, onSubmit }) {
 
   const handleUpload = async ({ file, onSuccess, onError }) => {
     try {
-      const data = await uploadImage(file);
+      const data = await uploadImage(file, 'band');
       const newFile = {
         uid: file.uid,
         name: file.name,
@@ -76,6 +72,15 @@ export default function SingerForm({ initialValues, onSubmit }) {
       onFinish={onFinish}
       initialValues={initialValues}
     >
+      {
+        initialValues && (
+          <Form.Item name="id" hidden>
+            <Input value={initialValues.id} />
+          </Form.Item>
+        )
+      }
+
+
       <Form.Item name="name" label="Name" rules={[{ required: true }]}>
         <Input />
       </Form.Item>

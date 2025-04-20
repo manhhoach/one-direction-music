@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Singer from "../components/Singer";
+import SingerIntro from "../components/SingerIntro";
 import { getAllSingers } from "../services/singerService";
 
 export default function Band() {
@@ -22,10 +22,10 @@ export default function Band() {
       fetchSingers()
    }, [])
    return (
-      <>
+      <div className="">
          {
-            singers.length !== 0 && singers.map(singer => <Singer singer={singer} />)
+            singers.length !== 0 && singers.map((singer, i) => <SingerIntro i={i} key={singer.id} singer={singer} />)
          }
-      </>
+      </div>
    );
 }
