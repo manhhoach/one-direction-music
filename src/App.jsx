@@ -5,7 +5,7 @@ import Band from './pages/Band'
 import Music from './pages/Music'
 import BandManager from './pages/admin//band/BandManager'
 import MusicManager from './pages/admin/MusicManager'
-import AlbumManager from './pages/admin/AlbumManager'
+import AlbumManager from './pages/admin/album/AlbumManager'
 import NotFound from './ui/NotFound'
 import AdminLayout from './ui/AdminLayout'
 

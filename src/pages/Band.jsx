@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import SingerIntro from "../components/SingerIntro";
-import { getAllSingers } from "../services/singerService";
+import { getSingers } from "../services/singerService";
 
 export default function Band() {
    const [singers, setSingers] = useState([])
@@ -8,7 +8,7 @@ export default function Band() {
    const fetchSingers = async () => {
       try {
          setIsLoading(true)
-         const res = await getAllSingers();
+         const res = await getSingers();
          setSingers(res.data.data)
       }
       catch {

@@ -3,12 +3,12 @@ import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 
 const { Text } = Typography;
 
-export default function NetworkList() {
+export default function NetworkList({ displayText = 'Social Networks', name = 'networks' }) {
   return (
-    <Form.List name="networks">
+    <Form.List name={name}>
       {(fields, { add, remove }) => (
         <>
-          <Text strong>Social Networks</Text>
+          <Text strong>{displayText}</Text>
           {fields.map(({ key, name, ...restField }) => (
             <Space
               key={key}
@@ -42,7 +42,7 @@ export default function NetworkList() {
               block
               icon={<PlusOutlined />}
             >
-              Add Network
+              Add {displayText}
             </Button>
           </Form.Item>
         </>
