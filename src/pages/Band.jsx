@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SingerIntro from "../components/SingerIntro";
+import SingerIntro from "./../ui/SingerIntro";
 import { getSingers } from "../services/singerService";
 
 export default function Band() {

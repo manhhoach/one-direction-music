@@ -1,5 +1,5 @@
-import NetworkButton from "./NetworkButton"
-import SocialIcon from './SocialIcon'
+import NetworkButton from "../components/NetworkButton"
+import SocialIcon from '../components/SocialIcon'
 import { useState, useEffect } from "react";
 
 
