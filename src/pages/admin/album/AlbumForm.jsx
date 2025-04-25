@@ -5,77 +5,63 @@ import {
   Button,
   DatePicker,
 } from 'antd';
-import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import dayjs from 'dayjs';
 import { uploadImage } from '../../../services/uploadService';
 import ImageUpload from '../../../components/ImageUpload';
 import SocialNetworkListInput from '../../../components/SocialNetworkListInput';
-import dayjs from 'dayjs';
 import FanVideosInput from '../../../components/FanVideosInput';
-const { TextArea } = Input
+import ColorPickerInput from '../../../components/ColorPickerInput';
+
+const { TextArea } = Input;
 
 export default function AlbumForm({ initialValues, onSubmit }) {
   const [form] = Form.useForm();
   const [imageCoverFile, setImageCoverFile] = useState([]);
-  const [photos, setPhotos] = useState([]);
+  const [imageFile, setImageFile] = useState([]);
   const [fanVideos, setFanVideos] = useState([]);
   const [linksToBuy, setLinksToBuy] = useState([]);
 
   useEffect(() => {
     if (initialValues) {
+      form.setFieldsValue({ ...initialValues });
 
-      form.setFieldsValue({
-        ...initialValues,
-      });
-
-      // image cover
       if (initialValues.imageCover) {
-        setImageCoverFile([
-          {
-            uid: '-1',
-            name: 'cover.jpg',
-            status: 'done',
-            url: initialValues.imageCover,
-          },
-        ]);
+        setImageCoverFile([{
+          uid: '-1',
+          name: 'cover.jpg',
+          status: 'done',
+          url: initialValues.imageCover,
+        }]);
       }
 
-      if (initialValues.photos) setPhotos(initialValues.photos);
+      if (initialValues.image) {
+        setImageFile([{
+          uid: '-2',
+          name: 'image.jpg',
+          status: 'done',
+          url: initialValues.image,
+        }]);
+      }
+
       if (initialValues.fanVideos) setFanVideos(initialValues.fanVideos);
       if (initialValues.linksToBuy) setLinksToBuy(initialValues.linksToBuy);
     } else {
       form.resetFields();
       setImageCoverFile([]);
-      setPhotos([]);
+      setImageFile([]);
       setFanVideos([]);
       setLinksToBuy([]);
     }
   }, [initialValues, form]);
-
-  const handleUploadSingle = async ({ file, onSuccess, onError }) => {
-    try {
-      const data = await uploadImage(file, 'album');
-      const newFile = {
-        uid: file.uid,
-        name: file.name,
-        status: 'done',
-        url: data,
-      };
-      setImageCoverFile([newFile]); // chỉ 1 ảnh
-      onSuccess('ok');
-    } catch (err) {
-      onError(err);
-    }
-  };
-
-  const handleRemoveSingle = () => {
-    setImageCoverFile([]);
-  };
 
   const onFinish = (values) => {
     const payload = {
       ...values,
       releaseDate: dayjs(values.releaseDate),
       imageCover: imageCoverFile.length > 0 ? imageCoverFile[0].url : '',
+      image: imageFile.length > 0 ? imageFile[0].url : '',
+      fanVideos,
+      linksToBuy,
     };
     onSubmit(payload);
   };
@@ -87,9 +73,9 @@ export default function AlbumForm({ initialValues, onSubmit }) {
       onFinish={onFinish}
       initialValues={initialValues}
     >
-      {initialValues && (
+      {initialValues?.id && (
         <Form.Item name="id" hidden>
-          <Input value={initialValues.id} />
+          <Input />
         </Form.Item>
       )}
 
@@ -97,7 +83,12 @@ export default function AlbumForm({ initialValues, onSubmit }) {
         <Input />
       </Form.Item>
 
-      <Form.Item getValueProps={(value) => ({ value: value ? dayjs(value) : "", })} name="releaseDate" label="Release Date" rules={[{ required: true }]}>
+      <Form.Item
+        name="releaseDate"
+        label="Release Date"
+        rules={[{ required: true }]}
+        getValueProps={(value) => ({ value: value ? dayjs(value) : "" })}
+      >
         <DatePicker format={'MM/DD/YYYY'} style={{ width: '100%' }} />
       </Form.Item>
 
@@ -107,19 +98,31 @@ export default function AlbumForm({ initialValues, onSubmit }) {
 
       <Form.Item label="Image Cover" required>
         <ImageUpload
-          fileList={imageCoverFile}
-          handleUpload={handleUploadSingle}
-          handleRemove={handleRemoveSingle}
-          maxCount={1}
+          value={imageCoverFile}
+          onChange={setImageCoverFile}
+          uploadFn={(file) => uploadImage(file, 'album')}
+          maxFiles={1}
         />
       </Form.Item>
 
-      <Form.Item name='fanVideos' label="Fan Videos (YouTube URLs)">
-        <FanVideosInput />
+      <Form.Item label="Image" required>
+        <ImageUpload
+          value={imageFile}
+          onChange={setImageFile}
+          uploadFn={(file) => uploadImage(file, 'album')}
+          maxFiles={1}
+        />
+      </Form.Item>
+      <Form.Item name="mainColor" label="Main Color">
+        <ColorPickerInput />
       </Form.Item>
 
-      <Form.Item name='linksToBuy' label="Links to buy" rules={[{ required: false }]}>
-        <SocialNetworkListInput />
+      <Form.Item name='fanVideos' label="Fan Videos (YouTube URLs)">
+        <FanVideosInput value={fanVideos} onChange={setFanVideos} />
+      </Form.Item>
+
+      <Form.Item name='linksToBuy' label="Links to buy">
+        <SocialNetworkListInput value={linksToBuy} onChange={setLinksToBuy} />
       </Form.Item>
 
       <Form.Item>

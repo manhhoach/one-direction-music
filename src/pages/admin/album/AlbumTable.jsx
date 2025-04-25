@@ -11,7 +11,7 @@ export default function AlbumTable({ data, loading, pagination, onChangePage, on
       {
          title: 'Description',
          dataIndex: 'description',
-         width: '500px',
+         width: '400px',
 
       },
       {
@@ -24,11 +24,23 @@ export default function AlbumTable({ data, loading, pagination, onChangePage, on
       {
          title: 'Image Cover',
          dataIndex: 'imageCover',
-         width: '500px',
+         width: '200px',
          render: (url) => (
             <img
                src={url}
                alt="cover"
+               style={{ width: '100%', height: 'auto', borderRadius: 4 }}
+            />
+         ),
+      },
+      {
+         title: 'Image',
+         dataIndex: 'image',
+         width: '200px',
+         render: (url) => (
+            <img
+               src={url}
+               alt="image"
                style={{ width: '100%', height: 'auto', borderRadius: 4 }}
             />
          ),

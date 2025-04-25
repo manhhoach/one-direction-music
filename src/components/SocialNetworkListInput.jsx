@@ -3,7 +3,8 @@ import { Select, Input, Button, Space, message } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import { getNetworks } from './../services/commonService'
 
-const SocialNetworkListInput = ({ value = [], onChange }) => {
+const SocialNetworkListInput = ({ value, onChange }) => {
+   value = value ?? []
    const [networkOptions, setNetworkOptions] = useState([]);
    const [items, setItems] = useState(value);
 
