@@ -1,8 +1,11 @@
 import React from 'react';
 import { Table, Button, Popconfirm } from 'antd';
 import dayjs from 'dayjs';
+import { useNavigate } from "react-router-dom";
 
 export default function AlbumTable({ data, loading, pagination, onChangePage, onEdit, onDelete }) {
+   const navigate = useNavigate();
+
    const columns = [
       {
          title: 'Name',
@@ -51,6 +54,7 @@ export default function AlbumTable({ data, loading, pagination, onChangePage, on
             return (
                <>
                   <Button type="link" onClick={() => onEdit(record)}>Edit</Button>
+                  <Button type="link" onClick={() => navigate(`/admin/song/${record.id}`)}>Manage song</Button>
                   <Popconfirm
                      title="Are you sure to delete?"
                      onConfirm={() => onDelete(record.id)}

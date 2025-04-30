@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Band from './pages/Band'
 import Music from './pages/Music'
 import BandManager from './pages/admin//band/BandManager'
-import MusicManager from './pages/admin/MusicManager'
+import SongManager from './pages/admin/song/SongManager'
 import AlbumManager from './pages/admin/album/AlbumManager'
 import NotFound from './ui/NotFound'
 import AdminLayout from './ui/AdminLayout'
@@ -23,7 +23,7 @@ function App() {
         </Route>
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="band" element={<BandManager />} />
-          <Route path="music" element={<MusicManager />} />
+          <Route path="song/:albumId" element={<SongManager />} />
           <Route path="album" element={<AlbumManager />} />
           <Route path="*" element={<NotFound />} />
         </Route>

@@ -26,11 +26,6 @@ const AdminLayout = () => {
          icon: <PictureOutlined />,
          label: 'Album Manager',
       },
-      {
-         key: '/admin/music',
-         icon: <AppstoreAddOutlined />,
-         label: 'Music Manager',
-      },
    ];
 
    return (
