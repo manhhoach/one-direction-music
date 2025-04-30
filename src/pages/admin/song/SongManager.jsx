@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { SYSTEM_CONSTANTS } from "../../../utils/constants"
-import { getSongs, deleteSong } from "../../../services/songService"
+import { getSongs, deleteSong, createSong, updateSong } from "../../../services/songService"
 import { Button, message, Modal } from "antd"
 import SongTable from "./SongTable"
+import SongForm from "./SongForm"
 
 export default function SongManager() {
    const { albumId } = useParams()
@@ -51,6 +52,23 @@ export default function SongManager() {
       }
    };
 
+   const handleSubmit = async (formData) => {
+      formData.albumId = albumId
+      try {
+         if (selectedSong) {
+            await updateSong(selectedSong.id, formData);
+            message.success('Updated successfully');
+         } else {
+            await createSong(formData);
+            message.success('Created successfully');
+         }
+         fetchSongs(pagination.pageNumber, pagination.pageSize);
+         setIsModalOpen(false);
+      } catch (err) {
+         message.error('Operation failed');
+      }
+   };
+
 
    useEffect(function () {
       fetchSongs(pagination.pageNumber, pagination.pageSize)
@@ -86,9 +104,9 @@ export default function SongManager() {
          onCancel={() => setIsModalOpen(false)}
          footer={null}
          destroyOnClose
-         className="!w-1/2"
+         className="!w-2/3"
       >
-
+         <SongForm initialValues={selectedSong} onSubmit={handleSubmit}></SongForm>
       </Modal>
    </div>)
 }
