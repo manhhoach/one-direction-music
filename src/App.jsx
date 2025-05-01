@@ -8,6 +8,7 @@ import SongManager from './pages/admin/song/SongManager'
 import AlbumManager from './pages/admin/album/AlbumManager'
 import NotFound from './ui/NotFound'
 import AdminLayout from './ui/AdminLayout'
+import AlbumDetail from './pages/AlbumDetail'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' index element={<Navigate to='/home' />}></Route>
           <Route path='home' element={<Home />}></Route>
           <Route path='music' element={<Music />}></Route>
+          <Route path='music/albums/:slug' element={<AlbumDetail />} />
           <Route path='band' element={<Band />}></Route>
           <Route path="*" element={<NotFound />} />
         </Route>

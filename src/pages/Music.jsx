@@ -22,7 +22,7 @@ export default function Music() {
       fetchAlbums()
    }, [])
    return (
-      <div className="">
+      <div className="w-full">
          {
             albums.length !== 0 && albums.map((album, i) => <AlbumIntro key={album.id} album={album} />)
          }

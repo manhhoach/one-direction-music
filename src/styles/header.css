@@ -1,4 +1,3 @@
-
 /*Header */
 
 .link-style {
@@ -24,4 +23,10 @@
    margin: 0 auto;
    background: url('/images/1d-logo.png') no-repeat center center;
    background-size: contain;
+}
+
+.custom-menu-style .ant-menu-item-selected {
+   background-color: unset !important;
+   text-decoration: underline;
+   text-underline-offset: 0.5rem;
 }
