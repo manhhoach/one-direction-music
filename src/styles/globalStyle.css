@@ -40,6 +40,7 @@
    z-index: 10;
 }
 
+
 .font-source-code-pro {
    font-family: var(--font-source-code-pro);
 }
@@ -128,11 +129,11 @@
    text-align: center;
 }
 
-.link-hover:hover{
+.link-hover:hover {
    opacity: 0.6;
 }
 
-.text-times{
+.text-times {
    font-family: var(--font-times);
    font-size: 1.5rem;
    text-align: center;
