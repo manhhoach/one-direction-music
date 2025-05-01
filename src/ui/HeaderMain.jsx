@@ -4,7 +4,21 @@ import { useLocation } from "react-router-dom";
 
 const { Header } = Layout
 
+const menuItems = [
+   {
+      key: "music",
+      label: <Link to="/music" className="link-style">MUSIC</Link>,
+      className: "menu-item-style",
+   },
+   {
+      key: "band",
+      label: <Link to="/band" className="link-style">BAND</Link>,
+      className: "menu-item-style",
+   },
+];
+
 export default function HeaderMain() {
+
    const location = useLocation();
    const path = location.pathname;
    let selectedKey = "";
@@ -19,26 +33,13 @@ export default function HeaderMain() {
             <Link className="link-to-home" to='/home'></Link>
          </Header>
          <Header className="!bg-black">
-            <Menu mode="horizontal" theme="dark"
+            <Menu
+               mode="horizontal"
+               theme="dark"
                className="!bg-black w-full h-full justify-center gap-20 custom-menu-style"
-               selectedKeys={[selectedKey]} >
-               <Menu.Item className="menu-item-style" key="music">
-                  <Link
-                     to="/music"
-                     className="link-style"
-                  >
-                     MUSIC
-                  </Link>
-               </Menu.Item>
-               <Menu.Item className="menu-item-style" key="band">
-                  <Link
-                     to="/band"
-                     className="link-style"
-                  >
-                     BAND
-                  </Link>
-               </Menu.Item>
-            </Menu>
+               selectedKeys={[selectedKey]}
+               items={menuItems}
+            />
          </Header>
       </>
 

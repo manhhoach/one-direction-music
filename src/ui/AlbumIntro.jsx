@@ -2,7 +2,6 @@ import formatDate from './../utils/formatDate'
 import FindOutMoreButton from './../components/FindOutMoreButton'
 
 export default function AlbumIntro({ album }) {
-   console.log(album.mainColor)
    return (
       <div className='w-full relative h-screen'>
          <img src={album.imageCover} alt="" className="absolute top-0 left-0 w-full h-full object-fit" style={{ filter: 'grayscale(100%)' }} />

@@ -7,8 +7,8 @@ export const getAlbums = () => {
   return axios.get(API_BASE);
 };
 
-export const getAlbumById = (id) => {
-  return axios.get(`${API_BASE}/${id}`);
+export const getAlbumBySlug = (slug) => {
+  return axios.get(`${API_BASE}/${slug}`);
 };
 
 export const createAlbum = (data) => {
