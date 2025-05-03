@@ -1,11 +1,12 @@
 import formatDate from './../utils/formatDate'
 import FindOutMoreButton from './../components/FindOutMoreButton'
+import combineUrl from './../utils/combineUrl'
 
 export default function AlbumIntro({ album }) {
    return (
       <div className="w-full relative" style={{minHeight: '100vh'}}>
          <img
-            src={album.imageCover}
+            src={combineUrl(album.imageCover)}
             alt=""
             className="absolute top-0 left-0 w-full h-full object-fit"
             style={{ filter: 'grayscale(100%)', zIndex: -2 }}

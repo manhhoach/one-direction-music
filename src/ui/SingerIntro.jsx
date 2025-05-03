@@ -1,7 +1,7 @@
 import NetworkButton from "../components/NetworkButton"
 import SocialIcon from '../components/SocialIcon'
 import { useState, useEffect } from "react";
-
+import combineUrl from './../utils/combineUrl'
 
 export default function SingerIntro({ singer, i }) {
    const [index, setIndex] = useState(0);
@@ -32,7 +32,7 @@ export default function SingerIntro({ singer, i }) {
                   className={`absolute top-0 left-0 w-[50vw] object-cover h-screen transition-opacity duration-100 
                      ${i === index ? 'opacity-100 z-100' : ' opacity-0 z-0'
                      }`}
-                  src={imgEle}
+                  src={combineUrl(imgEle)}
                   key={i}
                   alt={singer.name}
                />)

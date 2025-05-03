@@ -18,7 +18,7 @@ export default function SingerForm({ initialValues, onSubmit }) {
     if (initialValues) {
       form.setFieldsValue(initialValues);
 
-      // Convert image URLs to file list format
+
       if (initialValues.images) {
         const imageFiles = initialValues.images.map((url, index) => ({
           uid: index.toString(),
@@ -33,28 +33,6 @@ export default function SingerForm({ initialValues, onSubmit }) {
       setFileList([]);
     }
   }, [initialValues]);
-
-
-  const handleUpload = async ({ file, onSuccess, onError }) => {
-    try {
-      const data = await uploadImage(file, 'band');
-      const newFile = {
-        uid: file.uid,
-        name: file.name,
-        status: 'done',
-        url: data,
-      };
-
-      setFileList((prev) => [...prev, newFile]);
-      onSuccess('ok');
-    } catch (err) {
-      onError(err);
-    }
-  };
-
-  const handleRemove = (file) => {
-    setFileList((prev) => prev.filter((f) => f.uid !== file.uid));
-  };
 
   const onFinish = (values) => {
     const images = fileList.map((f) => f.url); // lấy đúng URL ảnh
@@ -91,14 +69,14 @@ export default function SingerForm({ initialValues, onSubmit }) {
 
       <Form.Item label="Images">
         <ImageUpload
-          fileList={fileList}
-          handleUpload={handleUpload}
-          handleRemove={handleRemove}
+          value={fileList}
+          onChange={setFileList}
+          uploadFn={(file) => uploadImage(file, 'band')}
         />
       </Form.Item>
 
       <Form.Item name='networks' label="Social Networks" rules={[{ required: false }]}>
-        <SocialNetworkListInput/>
+        <SocialNetworkListInput />
       </Form.Item>
 
 

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import NetworkButton from "../components/NetworkButton"
 import SocialIcon from '../components/SocialIcon'
 import SongList from "../components/SongList"
-
+import combineUrl from './../utils/combineUrl'
 
 export default function AlbumDetail() {
    const { slug } = useParams()
@@ -36,7 +36,7 @@ export default function AlbumDetail() {
       <>
          <div className='w-full relative' style={{ minHeight: '100vh' }}>
             <img
-               src={album.imageCover}
+               src={combineUrl(album.imageCover)}
                alt=""
                className="absolute top-0 left-0 w-full h-full object-fit"
             />
@@ -51,10 +51,10 @@ export default function AlbumDetail() {
             </div>
             <div className="w-1/2 h-full flex flex-col items-center gap-10" style={{ backgroundColor: '#ccc' }}>
                <p className="text-center text-xl font-times mt-5">{album.name}</p>
-               <img src={album.image} alt="" className="w-1/2 object-contain" />
+               <img src={combineUrl(album.image)} alt="" className="w-1/2 object-contain" />
                <div className="w-full flex justify-center items-center gap-10 mt-5">
                   {
-                     album.linksToBuy && album.linksToBuy.map((link, index) => (
+                     album.linksToBuy && album.linksToBuy.map((link) => (
                         <NetworkButton key={link.icon} href={link.link} target="_blank">
                            <SocialIcon size={40} icon={link.icon} />
                         </NetworkButton>

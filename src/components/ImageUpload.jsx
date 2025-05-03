@@ -1,6 +1,7 @@
 // ImageUpload.jsx
 import { Upload, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
+import combineUrl from './../utils/combineUrl';
 import { useState } from 'react';
 
 export default function ImageUpload({
@@ -9,6 +10,7 @@ export default function ImageUpload({
    maxFiles = 8,
    uploadFn, // function upload thực tế
 }) {
+   console.log(value)
    const [loading, setLoading] = useState(false);
 
    const handleUpload = async ({ file, onSuccess, onError }) => {
@@ -37,11 +39,13 @@ export default function ImageUpload({
       onChange?.(updatedList);
    };
 
+   var fileList = value.map((item) => { return { ...item, url: combineUrl(item.url) } })
+
    return (
       <Upload
          customRequest={handleUpload}
          listType="picture-card"
-         fileList={value}
+         fileList={fileList}
          onRemove={handleRemove}
          multiple
          accept="image/*"

@@ -11,7 +11,6 @@ import AdminLayout from './ui/AdminLayout'
 import AlbumDetail from './pages/AlbumDetail'
 
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
