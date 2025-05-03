@@ -4,6 +4,8 @@ import NotFound from "../ui/NotFound"
 import { useEffect, useState } from "react"
 import NetworkButton from "../components/NetworkButton"
 import SocialIcon from '../components/SocialIcon'
+import SongList from "../components/SongList"
+
 
 export default function AlbumDetail() {
    const { slug } = useParams()
@@ -29,7 +31,7 @@ export default function AlbumDetail() {
    if (!album) {
       return <NotFound></NotFound>
    }
-
+   console.log(album)
    return (
       <>
          <div className='w-full relative' style={{ minHeight: '100vh' }}>
@@ -61,13 +63,11 @@ export default function AlbumDetail() {
                </div>
             </div>
          </div>
+         {
+            album.songs && <SongList songs={album.songs} />
+         }
 
-         <div className="flex flex-col">
-            <p className="link-custom">SONGS</p>
-            <div>
-               
-            </div>
-         </div>
+
       </>
 
    )
