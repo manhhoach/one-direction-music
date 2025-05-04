@@ -15,7 +15,7 @@ export default function AlbumIntro({ album }) {
             className="absolute top-0 left-0 w-full h-full"
             style={{
                backgroundColor: album.mainColor,
-               opacity: 0.6,
+               opacity: 0.65,
                zIndex: -1
             }}
          ></div>

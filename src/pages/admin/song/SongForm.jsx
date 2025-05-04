@@ -6,6 +6,7 @@ import {
    Col,
    InputNumber,
    Button,
+   Checkbox,
 } from "antd";
 import { useEffect, useState } from "react";
 import ImageUpload from "../../../components/ImageUpload";
@@ -97,7 +98,13 @@ export default function SongForm({ initialValues, onSubmit }) {
             </Col>
 
             <Col span={12}>
-               <Form.Item label="Photos" required>
+               <Form.Item name='isBonus' label='Is Bonus' valuePropName="checked">
+                  <Checkbox />
+               </Form.Item>
+            </Col>
+
+            <Col span={12}>
+               <Form.Item label="Photos">
                   <ImageUpload
                      value={photos}
                      onChange={setPhotos}

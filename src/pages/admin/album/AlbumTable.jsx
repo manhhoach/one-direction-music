@@ -2,6 +2,7 @@ import React from 'react';
 import { Table, Button, Popconfirm } from 'antd';
 import dayjs from 'dayjs';
 import { useNavigate } from "react-router-dom";
+import combineUrl from './../../../utils/combineUrl'
 
 export default function AlbumTable({ data, loading, pagination, onChangePage, onEdit, onDelete }) {
    const navigate = useNavigate();
@@ -30,7 +31,7 @@ export default function AlbumTable({ data, loading, pagination, onChangePage, on
          width: '200px',
          render: (url) => (
             <img
-               src={url}
+               src={combineUrl(url)}
                alt="cover"
                style={{ width: '100%', height: 'auto', borderRadius: 4 }}
             />
@@ -42,7 +43,7 @@ export default function AlbumTable({ data, loading, pagination, onChangePage, on
          width: '200px',
          render: (url) => (
             <img
-               src={url}
+               src={combineUrl(url)}
                alt="image"
                style={{ width: '100%', height: 'auto', borderRadius: 4 }}
             />
