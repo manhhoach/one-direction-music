@@ -12,8 +12,8 @@ export const getSongs = (albumId, params) => {
   });
 };
 
-export const getSongById = (id) => {
-  return axios.get(`${API_BASE}/${id}`);
+export const getSongBySlug = (slug) => {
+  return axios.get(`${API_BASE}/${slug}`);
 };
 
 export const createSong = (data) => {

@@ -40,7 +40,7 @@ export default function SongList({ songs }) {
 function SongItem({ song, currentPath }) {
    return (
       <div>
-         <LinkSongName href={`${currentPath}/${song.slug}`}>{song.order}. {song.name} {song.isBonus ? '[Bonus Track]' : ''}</LinkSongName>
+         <LinkSongName href={`${currentPath}/songs/${song.slug}`}>{song.order}. {song.name} {song.isBonus ? '[Bonus Track]' : ''}</LinkSongName>
       </div>
    )
 }

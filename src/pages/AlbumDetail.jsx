@@ -31,7 +31,6 @@ export default function AlbumDetail() {
    if (!album) {
       return <NotFound></NotFound>
    }
-   console.log(album)
    return (
       <>
          <div className='w-full relative' style={{ minHeight: '100vh' }}>
