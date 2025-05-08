@@ -1,6 +1,7 @@
 import { Col, Row } from "antd";
 import LinkSongName from "./LinkSongName";
 import { useLocation } from "react-router-dom";
+import trimEnd from "../utils/trimEnd";
 
 export default function SongList({ songs }) {
    const location = useLocation();
@@ -40,7 +41,7 @@ export default function SongList({ songs }) {
 function SongItem({ song, currentPath }) {
    return (
       <div>
-         <LinkSongName href={`${currentPath}/songs/${song.slug}`}>{song.order}. {song.name} {song.isBonus ? '[Bonus Track]' : ''}</LinkSongName>
+         <LinkSongName href={`${trimEnd(currentPath, '/')}/songs/${song.slug}`}>{song.order}. {song.name} {song.isBonus ? '[Bonus Track]' : ''}</LinkSongName>
       </div>
    )
 }

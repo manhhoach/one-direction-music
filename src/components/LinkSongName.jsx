@@ -4,7 +4,7 @@ const StyledLink = styled.a`
   color: #000;
   font-family: var(--font-times);
   cursor: pointer;
-  font-size: 2rem;
+  font-size: ${({ fontSize }) => fontSize || '2rem'};
   line-height: 3.6rem;
   letter-spacing: 0.1rem;
 
@@ -14,9 +14,9 @@ const StyledLink = styled.a`
   }
 `;
 
-export default function LinkSongName({ href, children, target = '_self' }) {
+export default function LinkSongName({ href, children, fontSize, target = '_self' }) {
    return (
-      <StyledLink href={href} target={target}>
+      <StyledLink href={href} target={target} fontSize={fontSize}>
          {children}
       </StyledLink>
    );
