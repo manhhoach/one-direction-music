@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
 import SingerIntro from "./../ui/SingerIntro";
 import { getSingers } from "../services/singerService";
+import Loading from "../ui/Loading";
 
 export default function Band() {
    const [singers, setSingers] = useState([])
-   const [isLoading, setIsLoading] = useState(false)
+   const [isLoading, setIsLoading] = useState(true)
    const fetchSingers = async () => {
       try {
-         setIsLoading(true)
          const res = await getSingers();
          setSingers(res.data.data)
       }
       catch {
-
       }
       finally {
          setIsLoading(false)
@@ -21,10 +20,14 @@ export default function Band() {
    useEffect(function () {
       fetchSingers()
    }, [])
+
+   if (isLoading) {
+      return <Loading />
+   }
    return (
       <div className="">
          {
-            singers.length !== 0 && singers.map((singer, i) => <SingerIntro i={i} key={singer.id} singer={singer} />)
+            singers && singers.map((singer, i) => <SingerIntro i={i} key={singer.id} singer={singer} />)
          }
       </div>
    );

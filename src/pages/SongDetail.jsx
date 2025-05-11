@@ -54,9 +54,9 @@ export default function SongDetail() {
                   zIndex: -1
                }}
             ></div>
-            <div className="relative text-white text-center flex items-center justify-between mx-auto">
+            <div className="relative text-white text-center flex justify-between mx-auto">
                <ArrowButton type={'left'} currentUrl={currentPath} slug={song.prevSongSlug} />
-               <div className="w-9/10">
+               <div className="w-9/10 h-full">
                   <LinkSongName fontSize={'1.5rem'} href={currentPath.replace(`/songs/${songSlug}`, '')}>{song.albumName}</LinkSongName>
                   <h3 style={{
                      textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6), -2px -2px 4px rgba(0, 0, 0, 0.6)'

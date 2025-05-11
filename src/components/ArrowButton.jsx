@@ -10,8 +10,8 @@ export default function ArrowButton({ type, currentUrl, slug }) {
       navigate(`${href}`);
    }
    return (
-      <div onClick={redirectToSong} style={{ color: 'white', cursor: 'pointer' }}>
-         <IconComponent size={100} style={{ transform: 'scaleY(1.8)' }}  />
+      <div onClick={redirectToSong} style={{ color: 'white', cursor: 'pointer', display:'flex', alignItems:'end' }}>
+         <IconComponent size={100} style={{ transform: 'scaleY(1.6)' }}  />
       </div>
    )
 }
