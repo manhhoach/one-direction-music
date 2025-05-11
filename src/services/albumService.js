@@ -11,6 +11,11 @@ export const getAlbumBySlug = (slug) => {
   return axios.get(`${API_BASE}/${slug}`);
 };
 
+export const getAlbumPhotosBySlug = (slug) => {
+  return axios.get(`${API_BASE}/get-photos/${slug}`);
+};
+
+
 export const createAlbum = (data) => {
   return axios.post(API_BASE, data);
 };

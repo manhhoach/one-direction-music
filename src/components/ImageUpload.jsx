@@ -10,7 +10,6 @@ export default function ImageUpload({
    maxFiles = 8,
    uploadFn, // function upload thực tế
 }) {
-   console.log(value)
    const [loading, setLoading] = useState(false);
 
    const handleUpload = async ({ file, onSuccess, onError }) => {
@@ -23,7 +22,7 @@ export default function ImageUpload({
             status: 'done',
             url,
          };
-         const updatedList = [...value, newFile];
+         const updatedList = [...(value || []), newFile]; 
          onChange?.(updatedList);
          onSuccess('ok');
       } catch (err) {
@@ -39,15 +38,13 @@ export default function ImageUpload({
       onChange?.(updatedList);
    };
 
-   var fileList = value.map((item) => { return { ...item, url: combineUrl(item.url) } })
 
    return (
       <Upload
          customRequest={handleUpload}
          listType="picture-card"
-         fileList={fileList}
+         fileList={value.map((item) => { return { ...item, url: combineUrl(item.url) } })}
          onRemove={handleRemove}
-         multiple
          accept="image/*"
          showUploadList={{ showRemoveIcon: true }}
       >
