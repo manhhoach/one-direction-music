@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   color: #000;
   font-family: var(--font-times);
   cursor: pointer;
@@ -14,9 +15,9 @@ const StyledLink = styled.a`
   }
 `;
 
-export default function LinkSongName({ href, children, fontSize, mainColor, target = '_self' }) {
+export default function LinkSongName({ href, children, fontSize, mainColor }) {
    return (
-      <StyledLink href={href} target={target} fontSize={fontSize} mainColor={mainColor}>
+      <StyledLink to={href} fontSize={fontSize} mainColor={mainColor}>
          {children}
       </StyledLink>
    );

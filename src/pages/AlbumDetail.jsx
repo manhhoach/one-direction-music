@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link, useLocation, useParams } from "react-router-dom"
 import { getAlbumBySlug } from "../services/albumService"
 import NotFound from "../ui/NotFound"
 import { useEffect, useState } from "react"
@@ -12,6 +12,9 @@ export default function AlbumDetail() {
    const { slug } = useParams()
    const [album, setAlbum] = useState({})
    const [isLoading, setIsLoading] = useState(true)
+   const location = useLocation();
+   const photosPath = `${location.pathname}/photos`;
+
    const fetchAlbum = async () => {
       try {
          const res = await getAlbumBySlug(slug);
@@ -47,7 +50,7 @@ export default function AlbumDetail() {
          </div>
          <div className="w-full h-[800px] flex ">
             <div className="w-1/2 h-full flex items-center justify-center" style={{ backgroundColor: album.mainColor }}>
-               <a className="link-style uppercase bold italic text-white text-center !text-5xl">Photos</a>
+               <Link to={photosPath} className="link-style uppercase bold italic text-white text-center !text-5xl">Photos</Link>
             </div>
             <div className="w-1/2 h-full flex flex-col items-center gap-10" style={{ backgroundColor: '#ccc' }}>
                <p className="text-center text-xl font-times mt-5">{album.name}</p>

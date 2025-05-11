@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   color: white;
   border: 0.25rem solid white;
   text-transform: uppercase;
@@ -20,9 +21,9 @@ const StyledLink = styled.a`
   }
 `;
 
-export default function FindOutMoreButton({ href, children, target = '_self' }) {
+export default function FindOutMoreButton({ href, children }) {
    return (
-      <StyledLink href={href} target={target}>
+      <StyledLink to={href}>
          {children}
       </StyledLink>
    );

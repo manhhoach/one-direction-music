@@ -10,6 +10,7 @@ import NotFound from './ui/NotFound'
 import AdminLayout from './ui/AdminLayout'
 import AlbumDetail from './pages/AlbumDetail'
 import SongDetail from './pages/SongDetail'
+import AlbumPhotos from './pages/AlbumPhotos'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='home' element={<Home />}></Route>
           <Route path='music' element={<Music />}></Route>
           <Route path='music/albums/:slug' element={<AlbumDetail />} />
+          <Route path='music/albums/:slug/photos' element={<AlbumPhotos />} />
           <Route path='music/albums/:albumSlug/songs/:songSlug' element={<SongDetail />} />
           <Route path='band' element={<Band />}></Route>
           <Route path="*" element={<NotFound />} />

@@ -44,7 +44,7 @@ export default function SongDetail() {
                src={combineUrl(song.albumImageCover)}
                alt=""
                className="absolute top-0 left-0 w-full h-full object-fill"
-               style={{ filter: 'grayscale(10%)', zIndex: -2 }}
+               style={{ filter: 'grayscale(5%)', zIndex: -2 }}
             />
             <div
                className="absolute top-0 left-0 w-full h-full"
@@ -56,29 +56,30 @@ export default function SongDetail() {
             ></div>
             <div className="relative text-white text-center flex justify-between mx-auto">
                <ArrowButton type={'left'} currentUrl={currentPath} slug={song.prevSongSlug} />
-               <div className="w-9/10 h-full">
+               <div className="w-9/10">
                   <LinkSongName fontSize={'1.5rem'} href={currentPath.replace(`/songs/${songSlug}`, '')}>{song.albumName}</LinkSongName>
                   <h3 style={{
                      textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6), -2px -2px 4px rgba(0, 0, 0, 0.6)'
                   }} className="text-[6rem] font-bold font-cousine uppercase tracking-wide mt-50 mb-5">
                      {song.name}
                   </h3>
-                  <div className="flex flex-col items-center gap-10">
-                     {
-                        song.releaseDate && (<div className="font-source-code-pro text-3xl">
-                           <p className="uppercase">Release date</p>
-                           <p>{formatDate(song.releaseDate)}</p>
-                        </div>)
-                     }
-                     {
-                        song.authors && (<div className="font-source-code-pro text-3xl">
-                           <p className="uppercase">Written by</p>
-                           <div className="mx-auto w-9/10">{song.authors}</div>
-                        </div>)
-                     }
-                  </div>
+
                </div>
                <ArrowButton type={'right'} currentUrl={currentPath} slug={song.nextSongSlug} />
+            </div>
+            <div className="flex flex-col items-center justify-center gap-10 text-center text-white">
+               {
+                  song.releaseDate && (<div className="font-source-code-pro text-3xl">
+                     <p className="uppercase">Release date</p>
+                     <p>{formatDate(song.releaseDate)}</p>
+                  </div>)
+               }
+               {
+                  song.authors && (<div className="font-source-code-pro text-3xl w-4/5">
+                     <p className="uppercase">Written by</p>
+                     <div className="mx-auto">{song.authors}</div>
+                  </div>)
+               }
             </div>
 
          </div>
