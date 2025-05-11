@@ -6,18 +6,18 @@ import { getSongBySlug } from "../services/songService";
 import formatDate from "../utils/formatDate";
 import ArrowButton from "../components/ArrowButton";
 import { useLocation } from "react-router-dom";
+import Loading from "../ui/Loading";
 import LinkSongName from "../components/LinkSongName";
 
 export default function SongDetail() {
-   const { songSlug } = useParams()
+   const { songSlug } = useParams();
    const location = useLocation();
    const currentPath = location.pathname;
 
    const [song, setSong] = useState({})
-   const [isLoading, setIsLoading] = useState(false)
+   const [isLoading, setIsLoading] = useState(true)
    const fetchSong = async () => {
       try {
-         setIsLoading(true)
          const res = await getSongBySlug(songSlug);
          setSong(res.data.data)
       }
@@ -29,8 +29,11 @@ export default function SongDetail() {
    }
    useEffect(function () {
       fetchSong()
-   }, [])
+   }, [songSlug])
 
+   if (isLoading) {
+      return <Loading />
+   }
    if (!song) {
       return <NotFound></NotFound>
    }

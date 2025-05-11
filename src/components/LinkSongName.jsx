@@ -9,14 +9,14 @@ const StyledLink = styled.a`
   letter-spacing: 0.1rem;
 
   &:hover{
-   border-bottom: 0.15rem solid #000;
-   color: #000;
+   color: ${({ mainColor }) => mainColor || '#000'};
+   border-bottom: 0.15rem solid ${({ mainColor }) => mainColor || '#000'};
   }
 `;
 
-export default function LinkSongName({ href, children, fontSize, target = '_self' }) {
+export default function LinkSongName({ href, children, fontSize, mainColor, target = '_self' }) {
    return (
-      <StyledLink href={href} target={target} fontSize={fontSize}>
+      <StyledLink href={href} target={target} fontSize={fontSize} mainColor={mainColor}>
          {children}
       </StyledLink>
    );

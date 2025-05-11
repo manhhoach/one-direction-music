@@ -69,13 +69,13 @@ export default function SongForm({ initialValues, onSubmit }) {
             </Col>
 
             <Col span={12}>
-               <Form.Item name='authors' label='Authors' rules={[{ required: true }]}>
+               <Form.Item name='authors' label='Authors'>
                   <Input />
                </Form.Item>
             </Col>
 
             <Col span={12}>
-               <Form.Item name='youtubeUrl' label='Youtube Url' rules={[{ required: true }]}>
+               <Form.Item name='youtubeUrl' label='Youtube Url'>
                   <Input />
                </Form.Item>
             </Col>
@@ -84,7 +84,6 @@ export default function SongForm({ initialValues, onSubmit }) {
                <Form.Item
                   name="releaseDate"
                   label="Release Date"
-                  rules={[{ required: true }]}
                   getValueProps={(value) => ({ value: value ? dayjs(value) : "" })}
                >
                   <DatePicker format={'MM/DD/YYYY'} style={{ width: '100%' }} />

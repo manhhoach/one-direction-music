@@ -1,13 +1,13 @@
 import { getAlbums } from './../services/albumService'
 import AlbumIntro from '../ui/AlbumIntro'
 import { useEffect, useState } from 'react'
+import Loading from '../ui/Loading'
 
 export default function Music() {
    const [albums, setAlbums] = useState([])
-   const [isLoading, setIsLoading] = useState(false)
+   const [isLoading, setIsLoading] = useState(true)
    const fetchAlbums = async () => {
       try {
-         setIsLoading(true)
          const res = await getAlbums();
          setAlbums(res.data.data)
       }
@@ -21,6 +21,11 @@ export default function Music() {
    useEffect(function () {
       fetchAlbums()
    }, [])
+
+   if (isLoading) {
+      return <Loading />
+   }
+
    return (
       <div className="w-full">
          {

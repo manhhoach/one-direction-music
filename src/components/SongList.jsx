@@ -3,7 +3,7 @@ import LinkSongName from "./LinkSongName";
 import { useLocation } from "react-router-dom";
 import trimEnd from "../utils/trimEnd";
 
-export default function SongList({ songs }) {
+export default function SongList({ songs, mainColor }) {
    const location = useLocation();
    const currentPath = location.pathname;
 
@@ -20,7 +20,7 @@ export default function SongList({ songs }) {
                   <Col span={12}>
                      <div className="text-center">
                         {firstList.map((song, index) => (
-                           <SongItem key={index} currentPath={currentPath} song={song} />
+                           <SongItem key={index} currentPath={currentPath} song={song} mainColor={mainColor} />
                         ))}
                      </div>
 
@@ -28,7 +28,7 @@ export default function SongList({ songs }) {
                   <Col span={12}>
                      <div className="text-center">
                         {secondList.map((song, index) => (
-                           <SongItem key={index} currentPath={currentPath} song={song} />
+                           <SongItem key={index} currentPath={currentPath} song={song} mainColor={mainColor} />
                         ))}
                      </div>
                   </Col>
@@ -38,10 +38,10 @@ export default function SongList({ songs }) {
    )
 }
 
-function SongItem({ song, currentPath }) {
+function SongItem({ song, currentPath, mainColor }) {
    return (
       <div>
-         <LinkSongName href={`${trimEnd(currentPath, '/')}/songs/${song.slug}`}>{song.order}. {song.name} {song.isBonus ? '[Bonus Track]' : ''}</LinkSongName>
+         <LinkSongName mainColor={mainColor} href={`${trimEnd(currentPath, '/')}/songs/${song.slug}`}>{song.order}. {song.name} {song.isBonus ? '[Bonus Track]' : ''}</LinkSongName>
       </div>
    )
 }

@@ -6,19 +6,18 @@ import NetworkButton from "../components/NetworkButton"
 import SocialIcon from '../components/SocialIcon'
 import SongList from "../components/SongList"
 import combineUrl from './../utils/combineUrl'
+import Loading from "../ui/Loading"
 
 export default function AlbumDetail() {
    const { slug } = useParams()
    const [album, setAlbum] = useState({})
-   const [isLoading, setIsLoading] = useState(false)
+   const [isLoading, setIsLoading] = useState(true)
    const fetchAlbum = async () => {
       try {
-         setIsLoading(true)
          const res = await getAlbumBySlug(slug);
          setAlbum(res.data.data)
       }
       catch {
-         // Handle error
       }
       finally {
          setIsLoading(false)
@@ -27,7 +26,9 @@ export default function AlbumDetail() {
    useEffect(function () {
       fetchAlbum()
    }, [])
-
+   if (isLoading) {
+      return <Loading />
+   }
    if (!album) {
       return <NotFound></NotFound>
    }
@@ -45,7 +46,7 @@ export default function AlbumDetail() {
             </p>
          </div>
          <div className="w-full h-[800px] flex ">
-            <div className="w-1/2 h-full flex items-center justify-center" style={{ backgroundColor: 'rgba(25,25,25)' }}>
+            <div className="w-1/2 h-full flex items-center justify-center" style={{ backgroundColor: album.mainColor }}>
                <a className="link-style uppercase bold italic text-white text-center !text-5xl">Photos</a>
             </div>
             <div className="w-1/2 h-full flex flex-col items-center gap-10" style={{ backgroundColor: '#ccc' }}>
@@ -63,7 +64,7 @@ export default function AlbumDetail() {
             </div>
          </div>
          {
-            album.songs && <SongList songs={album.songs} />
+            album.songs && <SongList mainColor={album.mainColor} songs={album.songs} />
          }
 
 
