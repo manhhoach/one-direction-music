@@ -21,9 +21,9 @@ const StyledLink = styled(Link)`
   }
 `;
 
-export default function FindOutMoreButton({ href, children }) {
+export default function FindOutMoreButton({ href, children, onMouseEnter, onMouseLeave }) {
    return (
-      <StyledLink to={href}>
+      <StyledLink to={href} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
          {children}
       </StyledLink>
    );

@@ -139,3 +139,27 @@
    text-align: center;
    letter-spacing: 0.05em;
 }
+
+.text-shadow-custom {
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.count-photos {
+   aspect-ratio: 1 / 1;
+   height: 60%;
+   border: 5px solid white;
+   transform: rotate(45deg);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.count-value {
+   transform: rotate(-45deg);
+   /* giữ chữ không bị xoay */
+   font-family: 'Source Code Pro', monospace;
+   font-size: 9rem;
+   color: white;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+   /* thay cho text-shadow-custom */
+}
