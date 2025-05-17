@@ -3,20 +3,22 @@ import LinkSongName from '../components/LinkSongName'
 import combineUrl from '../utils/combineUrl';
 import CountPhotos from '../components/CountPhotos';
 import FindOutMoreButton from './../components/FindOutMoreButton'
+import { useState } from 'react';
 
 export default function PhotoInAlbum({ song, albumName }) {
    const location = useLocation();
    const currentPath = location.pathname;
-
+   const [hovered, setHovered] = useState(false);
+   const pathToSongPhotos = `${currentPath}/${song.slug}`
 
    function handleMouseEnter() {
-      console.log('enter')
+      setHovered(true);
    }
 
    function handleMouseLeave() {
-      console.log('leave')
+      setHovered(false);
    }
-
+   console.log(song)
    return (
       <div className='w-full relative h-screen' style={{ minHeight: '100vh' }}>
          <img
@@ -28,12 +30,12 @@ export default function PhotoInAlbum({ song, albumName }) {
          <div className='text-center'>
             <LinkSongName fontSize={'1.3rem'} color={'white'} mainColor={'white'} href={currentPath.replace(`/photos`, '')}>{albumName}</LinkSongName>
          </div>
-         <div className='flex items-center justify-around h-100'>
-            <CountPhotos value={song.count} />
-            <p className="text-shadow-custom text-8xl text-white font-source-code-pro">{song.name} </p>
-         </div>
-         <div className='text-center'>
-            <FindOutMoreButton onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+         <div className={`container-photos text-center h-150 w-9/10 mx-auto ${hovered ? 'outline outline-white outline-[5px]' : ''}`}>
+            <div className='flex items-center justify-center h-2/3 gap-50 pb-10'>
+               <CountPhotos value={song.count} hovered={hovered} />
+               <span className="text-shadow-custom text-8xl text-white font-source-code-pro">{song.name} </span>
+            </div>
+            <FindOutMoreButton href={pathToSongPhotos} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                View Images
             </FindOutMoreButton>
          </div>
