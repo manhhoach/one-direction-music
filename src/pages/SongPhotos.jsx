@@ -48,7 +48,7 @@ export default function SongPhotos() {
    return (
       <>
          <BackToAlbum>
-            <LinkSongName href={`/music/albums/${albumSlug}`} fontSize={'1.5rem'} >Back to album</LinkSongName>
+            <LinkSongName href={`/music/albums/${albumSlug}`} fontSize={'1.3rem'} >Back to album</LinkSongName>
          </BackToAlbum>
          <div className='w-full relative h-screen' style={{ minHeight: '100vh' }}>
             <img

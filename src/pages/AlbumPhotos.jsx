@@ -4,6 +4,8 @@ import { getAlbumPhotosBySlug } from "../services/albumService"
 import Loading from "../ui/Loading"
 import NotFound from "../ui/NotFound"
 import PhotoInAlbum from "../ui/PhotoInAlbum"
+import BackToAlbum from "../ui/BackToAlbum"
+import LinkSongName from "../components/LinkSongName"
 
 export default function AlbumPhotos() {
    const { slug } = useParams()
@@ -31,10 +33,16 @@ export default function AlbumPhotos() {
       return <NotFound></NotFound>
    }
    return (
-      <div className="flex flex-col items-center justify-center w-full">
-         {
-            album.songs && album.songs.map((song) => <PhotoInAlbum song={song} albumName={album.name} key={song.slug} />)
-         }
-      </div>
+      <>
+         <BackToAlbum>
+            <LinkSongName fontSize={'1.3rem'} href={`/music/albums/${slug}`}>{album.name}</LinkSongName>
+         </BackToAlbum>
+         <div className="flex flex-col items-center justify-center w-full">
+            {
+               album.songs && album.songs.map((song) => <PhotoInAlbum song={song} key={song.slug} />)
+            }
+         </div>
+      </>
+
    )
 }
