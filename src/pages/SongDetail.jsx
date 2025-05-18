@@ -8,11 +8,14 @@ import ArrowButton from "../components/ArrowButton";
 import { useLocation } from "react-router-dom";
 import Loading from "../ui/Loading";
 import LinkSongName from "../components/LinkSongName";
+import { useNavigate } from "react-router-dom";
+import BackToAlbum from "../ui/BackToAlbum";
 
 export default function SongDetail() {
-   const { songSlug } = useParams();
+   const { songSlug, albumSlug } = useParams();
    const location = useLocation();
    const currentPath = location.pathname;
+   const navigate = useNavigate();
 
    const [song, setSong] = useState({})
    const [isLoading, setIsLoading] = useState(true)
@@ -37,8 +40,21 @@ export default function SongDetail() {
    if (!song) {
       return <NotFound></NotFound>
    }
+
+
+
+   function redirectToSong(slug) {
+      if (slug) {
+         const href = currentPath.replace(/\/[^/]*$/, `/${slug}`)
+         navigate(href);
+      }
+   }
+
    return (
       <>
+         <BackToAlbum>
+            <LinkSongName fontSize={'1.5rem'} href={`/music/albums/${albumSlug}`}>{song.albumName}</LinkSongName>
+         </BackToAlbum>
          <div className="w-full relative" style={{ minHeight: '100vh' }}>
             <img
                src={combineUrl(song.albumImageCover)}
@@ -55,9 +71,10 @@ export default function SongDetail() {
                }}
             ></div>
             <div className="relative text-white text-center flex justify-between mx-auto">
-               <ArrowButton type={'left'} currentUrl={currentPath} slug={song.prevSongSlug} />
+               <ArrowButton type={'left'} onClick={() => redirectToSong(song.prevSongSlug)} />
                <div className="w-9/10">
-                  <LinkSongName fontSize={'1.5rem'} href={currentPath.replace(`/songs/${songSlug}`, '')}>{song.albumName}</LinkSongName>
+
+
                   <h3 style={{
                      textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6), -2px -2px 4px rgba(0, 0, 0, 0.6)'
                   }} className="text-[6rem] font-bold font-cousine uppercase tracking-wide mt-50 mb-5">
@@ -65,7 +82,7 @@ export default function SongDetail() {
                   </h3>
 
                </div>
-               <ArrowButton type={'right'} currentUrl={currentPath} slug={song.nextSongSlug} />
+               <ArrowButton type={'right'} onClick={() => redirectToSong(song.nextSongSlug)} />
             </div>
             <div className="flex flex-col items-center justify-center gap-10 text-center text-white">
                {

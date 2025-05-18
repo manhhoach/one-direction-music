@@ -18,7 +18,6 @@ export default function PhotoInAlbum({ song, albumName }) {
    function handleMouseLeave() {
       setHovered(false);
    }
-   console.log(song)
    return (
       <div className='w-full relative h-screen' style={{ minHeight: '100vh' }}>
          <img

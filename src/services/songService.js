@@ -27,3 +27,8 @@ export const updateSong = (id, data) => {
 export const deleteSong = (id) => {
   return axios.delete(`${API_BASE}/${id}`);
 };
+
+
+export const getSongPhotosBySlug = (slug) => {
+  return axios.get(`${API_BASE}/get-photos/${slug}`);
+};
