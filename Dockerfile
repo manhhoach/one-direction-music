@@ -1,5 +1,5 @@
 # Build stage
-FROM node:18 AS build
+FROM node:alpine AS build
 
 WORKDIR /app
 COPY package*.json ./
@@ -16,7 +16,7 @@ COPY . .
 RUN npm run build
 
 # Serve stage
-FROM node:18-slim
+FROM node:alpine
 RUN npm install -g serve
 WORKDIR /app
 COPY --from=build /app/dist ./dist
