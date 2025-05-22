@@ -12,6 +12,8 @@ import AlbumDetail from './pages/AlbumDetail'
 import SongDetail from './pages/SongDetail'
 import AlbumPhotos from './pages/AlbumPhotos'
 import SongPhotos from './pages/SongPhotos'
+import Login from './pages/auth/Login'
+import Register from './pages/auth/Register'
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route element={<AppLayout />}>
           <Route path='/' index element={<Navigate to='/home' />}></Route>
           <Route path='home' element={<Home />}></Route>
+          <Route path='1d/login' element={<Login />}></Route>
+          <Route path='1d/register' element={<Register />}></Route>
           <Route path='music' element={<Music />}></Route>
           <Route path='music/albums/:slug' element={<AlbumDetail />} />
           <Route path='music/albums/:slug/photos' element={<AlbumPhotos />} />
