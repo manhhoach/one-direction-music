@@ -6,7 +6,7 @@ const Login = () => {
       try {
          const data = await login(values);
          message.success('Login successfully!');
-         
+         location.href = '/admin/band'
       } catch (error) {
          message.error(error.response?.data?.message || 'Login failed');
       }

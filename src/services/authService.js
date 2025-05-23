@@ -15,3 +15,10 @@ export const register = async (credentials) => {
    const response = await axios.post(`${API_BASE}/register`, credentials);
    return response.data;
 };
+
+export const checkLogin = async () => {
+   const response = await axios.get(`${API_BASE}/me`, {
+      withCredentials: true
+   });
+   return response.data;
+}

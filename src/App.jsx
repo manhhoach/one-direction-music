@@ -14,6 +14,7 @@ import AlbumPhotos from './pages/AlbumPhotos'
 import SongPhotos from './pages/SongPhotos'
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
+import RequireAuth from './components/RequireAuth'
 
 function App() {
   return (
@@ -32,11 +33,13 @@ function App() {
           <Route path='band' element={<Band />}></Route>
           <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route path="band" element={<BandManager />} />
-          <Route path="song/:albumId" element={<SongManager />} />
-          <Route path="album" element={<AlbumManager />} />
-          <Route path="*" element={<NotFound />} />
+        <Route path="/admin" element={<RequireAuth />} >
+          <Route element={<AdminLayout />}>
+            <Route path="band" element={<BandManager />} />
+            <Route path="song/:albumId" element={<SongManager />} />
+            <Route path="album" element={<AlbumManager />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Route>
 
       </Routes>
