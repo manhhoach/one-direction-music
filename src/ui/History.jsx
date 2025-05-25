@@ -43,7 +43,7 @@ export default function History() {
          </div>
 
          {/* Call to action */}
-         <CheckoutLink>
+         <CheckoutLink href={'/music/albums/made-in-the-am/songs/history'}>
             Checkout the single
          </CheckoutLink>
       </div>
