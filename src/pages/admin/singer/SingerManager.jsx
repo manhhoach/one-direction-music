@@ -9,7 +9,7 @@ import {
 import SingerTable from './SingerTable';
 import SingerForm from './SingerForm';
 
-export default function BandManager() {
+export default function SingerManager() {
    const [singers, setSingers] = useState([]);
    const [loading, setLoading] = useState(false);
    const [selectedSinger, setSelectedSinger] = useState(null);
@@ -45,7 +45,7 @@ export default function BandManager() {
    const handleSubmit = async (formData) => {
       try {
          if (selectedSinger) {
-            await updateSinger(selectedSinger.id, formData);
+            await updateSinger(formData);
             message.success('Updated successfully');
          } else {
             await createSinger(formData);

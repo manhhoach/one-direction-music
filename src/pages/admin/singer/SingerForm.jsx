@@ -35,7 +35,7 @@ export default function SingerForm({ initialValues, onSubmit }) {
   }, [initialValues]);
 
   const onFinish = (values) => {
-    const images = fileList.map((f) => f.url); // lấy đúng URL ảnh
+    const images = fileList?.map((f) => f.url); // lấy đúng URL ảnh
     const payload = {
       ...values,
       images,
@@ -75,12 +75,12 @@ export default function SingerForm({ initialValues, onSubmit }) {
         />
       </Form.Item>
 
-      <Form.Item name='networks' label="Social Networks" rules={[{ required: false }]}>
+      <Form.Item name='networks' label="Social Networks" rules={[{ required: true }]}>
         <SocialNetworkListInput />
       </Form.Item>
 
 
-      <Form.Item name="order" label="Order">
+      <Form.Item name="order" label="Order" rules={[{ required: true }]}>
         <InputNumber min={0} style={{ width: '100%' }} />
       </Form.Item>
 

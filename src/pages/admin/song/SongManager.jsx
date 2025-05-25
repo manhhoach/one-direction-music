@@ -56,7 +56,7 @@ export default function SongManager() {
       formData.albumId = albumId
       try {
          if (selectedSong) {
-            await updateSong(selectedSong.id, formData);
+            await updateSong(formData);
             message.success('Updated successfully');
          } else {
             await createSong(formData);

@@ -1,7 +1,10 @@
 import axios from 'axios';
 import config from '../config';
+import { credentialOptions } from './../utils/constants'
 const API_URL = config.apiUrl;
-const API_BASE = `${API_URL}/album`; // hoặc thay bằng biến môi trường
+const API_BASE = `${API_URL}/album`;
+
+console.log(credentialOptions)
 
 export const getAlbums = () => {
   return axios.get(API_BASE);
@@ -17,13 +20,13 @@ export const getAlbumPhotosBySlug = (slug) => {
 
 
 export const createAlbum = (data) => {
-  return axios.post(API_BASE, data);
+  return axios.post(API_BASE, data, credentialOptions);
 };
 
-export const updateAlbum = (id, data) => {
-  return axios.put(`${API_BASE}/${id}`, data);
+export const updateAlbum = (data) => {
+  return axios.put(`${API_BASE}`, data, credentialOptions);
 };
 
 export const deleteAlbum = (id) => {
-  return axios.delete(`${API_BASE}/${id}`);
+  return axios.delete(`${API_BASE}/${id}`, credentialOptions);
 };

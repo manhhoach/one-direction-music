@@ -17,9 +17,9 @@ const AdminLayout = () => {
 
    const menuItems = [
       {
-         key: '/admin/band',
+         key: '/admin/singer',
          icon: <TeamOutlined />,
-         label: 'Band Manager',
+         label: 'Singer Manager',
       },
       {
          key: '/admin/album',

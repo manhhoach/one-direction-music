@@ -3,7 +3,7 @@ import AppLayout from './ui/AppLayout'
 import Home from './pages/Home'
 import Band from './pages/Band'
 import Music from './pages/Music'
-import BandManager from './pages/admin//band/BandManager'
+import SingerManager from './pages/admin/singer/SingerManager'
 import SongManager from './pages/admin/song/SongManager'
 import AlbumManager from './pages/admin/album/AlbumManager'
 import NotFound from './ui/NotFound'
@@ -35,7 +35,7 @@ function App() {
         </Route>
         <Route path="/admin" element={<RequireAuth />} >
           <Route element={<AdminLayout />}>
-            <Route path="band" element={<BandManager />} />
+            <Route path="singer" element={<SingerManager />} />
             <Route path="song/:albumId" element={<SongManager />} />
             <Route path="album" element={<AlbumManager />} />
             <Route path="*" element={<NotFound />} />

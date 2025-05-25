@@ -42,7 +42,7 @@ export default function AlbumManager() {
    const handleSubmit = async (formData) => {
       try {
          if (selectedAlbum) {
-            await updateAlbum(selectedAlbum.id, formData);
+            await updateAlbum(formData);
             message.success('Updated successfully');
          } else {
             await createAlbum(formData);

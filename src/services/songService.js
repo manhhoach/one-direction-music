@@ -1,7 +1,8 @@
 import axios from 'axios';
 import config from '../config';
+import { credentialOptions } from './../utils/constants'
 const API_URL = config.apiUrl;
-const API_BASE = `${API_URL}/song`; // hoặc thay bằng biến môi trường
+const API_BASE = `${API_URL}/song`;
 
 export const getSongs = (albumId, params) => {
   return axios.get(`${API_BASE}`, {
@@ -17,15 +18,15 @@ export const getSongBySlug = (slug) => {
 };
 
 export const createSong = (data) => {
-  return axios.post(API_BASE, data);
+  return axios.post(API_BASE, data, credentialOptions);
 };
 
-export const updateSong = (id, data) => {
-  return axios.put(`${API_BASE}/${id}`, data);
+export const updateSong = (data) => {
+  return axios.put(`${API_BASE}`, data, credentialOptions);
 };
 
 export const deleteSong = (id) => {
-  return axios.delete(`${API_BASE}/${id}`);
+  return axios.delete(`${API_BASE}/${id}`, credentialOptions);
 };
 
 
