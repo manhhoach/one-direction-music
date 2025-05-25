@@ -4,9 +4,9 @@ import { login } from '../../services/authService';
 const Login = () => {
    const onFinish = async (values) => {
       try {
-         const data = await login(values);
+         await login(values);
          message.success('Login successfully!');
-         location.href = '/admin/band'
+         location.href = '/admin/singer'
       } catch (error) {
          message.error(error.response?.data?.message || 'Login failed');
       }
