@@ -23,7 +23,7 @@
 
 
 @font-face {
-   font-family: 'Playfair';
+   font-family: 'Playfair Display';
    src: url('/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf');
 }
 
@@ -40,6 +40,9 @@
    z-index: 10;
 }
 
+.font-playfair {
+   font-family: var(--font-playfair);
+}
 
 .font-source-code-pro {
    font-family: var(--font-source-code-pro);
