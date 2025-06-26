@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    networks:
+      - shared-network
     environment:
       - VITE_API_URL=http://one-d-music-node:7000/api
       - VITE_BASE_URL=http://one-d-music-node:7000
