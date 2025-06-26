@@ -6,8 +6,11 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000" # Host:Container
+      - "3000:3000"
     environment:
-      - VITE_API_URL=http://localhost:7000/api
-      - VITE_BASE_URL=http://localhost:7000
+      - VITE_API_URL=http://one-d-music-node:7000/api
+      - VITE_BASE_URL=http://one-d-music-node:7000
     restart: "always"
+networks:
+  shared-network:
+    external: true
