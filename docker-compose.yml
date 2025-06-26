@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   one-d-music-fe:
+    container_name: one-d-music-fe
     build:
       context: .
       dockerfile: Dockerfile
