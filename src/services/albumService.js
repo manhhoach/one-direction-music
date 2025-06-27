@@ -4,7 +4,6 @@ import { credentialOptions } from './../utils/constants'
 const API_URL = config.apiUrl;
 const API_BASE = `${API_URL}/album`;
 
-console.log(credentialOptions)
 
 export const getAlbums = () => {
   return axios.get(API_BASE);
