@@ -1,5 +1,5 @@
 # Build stage
-FROM node:20-slim AS build
+FROM node:20-bullseye AS build
 
 WORKDIR /app
 COPY package*.json ./
@@ -16,7 +16,7 @@ COPY . .
 RUN npm run build
 
 # Serve stage
-FROM node:20-slim
+FROM node:20-bullseye
 WORKDIR /app
 RUN npm install -g serve
 COPY --from=build /app/dist ./dist
