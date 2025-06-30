@@ -101,8 +101,8 @@ export default function SongDetail() {
          </div>
          {
             song.lyrics && (<div className="mt-5 mb-5">
-               <p className="link-custom mb-5">Lyrics</p>
-               <div className="text-center text-3xl font-times tracking-wide leading-relaxed" dangerouslySetInnerHTML={{ __html: song.lyrics }} />
+               <p className="link-custom">Lyrics</p>
+               <div className="text-center text-[1.5rem] font-times tracking-wide leading-normal" dangerouslySetInnerHTML={{ __html: song.lyrics }} />
             </div>)
          }
 

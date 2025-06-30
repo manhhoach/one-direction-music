@@ -6,6 +6,10 @@ const API_BASE = `${API_URL}/album`;
 import albums from './../data/album.json'
 
 
+export const getAlbumsForAdmin = () => {
+  return axios.get(API_BASE);
+};
+
 export const getAlbums = () => {
   //return axios.get(API_BASE);
   return albums;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, message, Modal } from 'antd';
 import {
-   getAlbums, createAlbum, deleteAlbum, updateAlbum
+   getAlbumsForAdmin, createAlbum, deleteAlbum, updateAlbum
 } from './../../../services/albumService'
 import AlbumTable from './AlbumTable';
 import AlbumForm from './AlbumForm';
@@ -21,7 +21,7 @@ export default function AlbumManager() {
    const fetchAlbums = async (page = 1, pageSize = 10) => {
       setLoading(true);
       try {
-         const res = await getAlbums();
+         const res = await getAlbumsForAdmin();
          setAlbums(res.data.data);
          setPagination({
             page,
