@@ -8,8 +8,8 @@ export default function Music() {
    const [isLoading, setIsLoading] = useState(true)
    const fetchAlbums = async () => {
       try {
-         const res = await getAlbums();
-         setAlbums(res.data.data)
+         const res = getAlbums();
+         setAlbums(res)
       }
       catch {
 
@@ -29,7 +29,7 @@ export default function Music() {
    return (
       <div className="w-full">
          {
-            albums.length !== 0 && albums.map((album, i) => <AlbumIntro key={album.id} album={album} />)
+            albums.length !== 0 && albums.map(album => <AlbumIntro key={album.id} album={album} />)
          }
       </div>
    );

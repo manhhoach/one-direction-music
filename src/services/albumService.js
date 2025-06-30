@@ -3,10 +3,12 @@ import config from '../config';
 import { credentialOptions } from './../utils/constants'
 const API_URL = config.apiUrl;
 const API_BASE = `${API_URL}/album`;
+import albums from './../data/album.json'
 
 
 export const getAlbums = () => {
-  return axios.get(API_BASE);
+  //return axios.get(API_BASE);
+  return albums;
 };
 
 export const getAlbumBySlug = (slug) => {

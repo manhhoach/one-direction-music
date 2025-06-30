@@ -1,0 +1,114 @@
+[
+  {
+    "id": "6804b2605a7292dd2ba7df53",
+    "name": "Made In The A.M.",
+    "imageCover": "/uploads/album/24507e06-b2e8-4122-b59e-c9d0e9486c8b.jpg",
+    "linksToBuy": [
+      {
+        "icon": "amazon",
+        "link": "https://www.amazon.co.uk/gp/product/B015N3EYH8?ie=UTF8&tag=onedirection03-21&linkCode=as2&camp=1634&creative=6738&creativeASIN=B015N3EYH8&ascsubtag=c2d0e7d6ff0992a394de41d89e15225c&ref=dmm_acq_soc_vn_u_lfire_lp_x_c2d0e7d6ff0992a394de41d89e15225c"
+      },
+      {
+        "icon": "itunes",
+        "link": "https://music.apple.com/vn/album/made-in-the-a-m-deluxe-edition/1040170924"
+      }
+    ],
+    "fanVideos": [
+      "https://www.youtube.com/watch?v=Ho32Oh6b4jc&t=3s",
+      "https://www.youtube.com/watch?v=Jwgf3wmiA04"
+    ],
+    "releaseDate": "2015-11-12T17:00:00Z",
+    "description": "\"Made In The A.M.\", the fifth album by One Direction is OUT NOW. Features the single \"Drag Me Down\" as well as the new songs \"Infinity\", \"History\", \"End of the Day\", \"Love You Goodbye\", \"What a Feeling\" and \"Perfect\".",
+    "mainColor": "#d26f52",
+    "image": "/uploads/album/05d0f047-52eb-4ce8-a5f1-351c5caa5c58.jpg",
+    "slug": "made-in-the-am"
+  },
+  {
+    "id": "6804c32f5a7292dd2ba7df55",
+    "name": "FOUR",
+    "imageCover": "/uploads/album/dd3a8d5f-b18b-4cdc-bb15-687c73badc2d.jpg",
+    "linksToBuy": [
+      {
+        "icon": "itunes",
+        "link": "https://smarturl.it/1DFouriTdlx"
+      },
+      {
+        "icon": "amazon",
+        "link": "https://www.amazon.co.uk/Four-Deluxe-One-Direction/dp/B00NER71D0?s=dmusic&ie=UTF8&qid=1410273633&sr=1-9&keywords=one+direction&tag=linkfire-smarturl-21&linkCode=as2&ascsubtag=9a9dfac72686c86928e2f129fd42bf0e&ref=dmm_acq_soc_vn_u_lfire_lp_x_9a9dfac72686c86928e2f129fd42bf0e"
+      }
+    ],
+    "fanVideos": [
+      "https://www.youtube.com/watch?v=syFZfO_wfMQ",
+      "https://www.youtube.com/watch?v=UpsKGvPjAgw"
+    ],
+    "releaseDate": "2014-11-16T17:00:00Z",
+    "description": "The new album! Features Steal My Girl, Night Changes and Fireproof.",
+    "mainColor": "#878787",
+    "image": "/uploads/album/9ec9ebb8-d459-42e7-a404-26aa34d5543b.jpg",
+    "slug": "four"
+  },
+  {
+    "id": "6804c37c5a7292dd2ba7df56",
+    "name": "Midnight memories",
+    "imageCover": "/uploads/album/13bd9d0f-84b1-4915-9708-f72bcbc128cf.jpg",
+    "linksToBuy": [
+      {
+        "icon": "itunes",
+        "link": "https://smarturl.it/MidnightMemoriesiTd"
+      },
+      {
+        "icon": "amazon",
+        "link": "https://smarturl.it/MidnightMemoriesAmz"
+      }
+    ],
+    "fanVideos": [
+      "https://www.youtube.com/watch?v=W-TE_Ys4iwM",
+      "https://www.youtube.com/watch?v=o_v9MY_FMcw"
+    ],
+    "releaseDate": "2013-11-24T17:00:00Z",
+    "description": "Number 1 in 19 countries! Includes Best Song Ever and Story Of My Life.",
+    "mainColor": "#c95450",
+    "image": "/uploads/album/2378095e-b3cc-4a32-82b3-8d3b7efce43c.jpg",
+    "slug": "midnight-memories"
+  },
+  {
+    "id": "6804c3b55a7292dd2ba7df57",
+    "name": "Take me home",
+    "imageCover": "/uploads/album/cd4c6e68-a54e-4f6f-ba82-5d567669b781.jpg",
+    "linksToBuy": [
+      {
+        "icon": "amazon",
+        "link": "https://www.amazon.co.uk/gp/product/B00942S4OY?ie=UTF8&tag=sycodm-21&linkCode=as2&camp=1634&creative=6738&creativeASIN=B00942S4OY"
+      }
+    ],
+    "fanVideos": [
+      "https://www.youtube.com/watch?v=omxPGB12svM",
+      "https://www.youtube.com/watch?v=AbPED9bisSc"
+    ],
+    "releaseDate": "2012-11-08T17:00:00Z",
+    "description": "Platinum in 21 countries! Includes singles Live While We’re Young and Little Things.",
+    "mainColor": "#859cbe",
+    "image": "/uploads/album/2458e754-d70a-42dc-98e3-698505a663ee.jpg",
+    "slug": "take-me-home"
+  },
+  {
+    "id": "6804c3da5a7292dd2ba7df58",
+    "name": "Up all night",
+    "imageCover": "/uploads/album/759bef7b-ed64-4525-a766-3b91092a4d22.jpg",
+    "linksToBuy": [
+      {
+        "icon": "amazon",
+        "link": "https://www.amazon.co.uk/gp/product/B005R5U5B2?ie=UTF8&tag=sycodm-21&linkCode=as2&camp=1634&creative=6738&creativeASIN=B005R5U5B2"
+      }
+    ],
+    "fanVideos": [
+      "https://www.youtube.com/watch?v=QJO3ROT-A4E",
+      "https://www.youtube.com/watch?v=Y1xs_xPb46M"
+    ],
+    "releaseDate": "2011-11-17T17:00:00Z",
+    "description": "Where it all began! The debut album featuring What Makes You Beautiful and One Thing.",
+    "mainColor": "#77b4af",
+    "image": "/uploads/album/2ee0b167-bdee-450d-8347-8297a78b8aa0.jpg",
+    "slug": "up-all-night"
+  }
+]
