@@ -4,7 +4,7 @@ import combineUrl from './../utils/combineUrl'
 
 export default function AlbumIntro({ album }) {
    return (
-      <div className="w-full relative" style={{minHeight: '100vh'}}>
+      <div className="w-full relative" style={{ minHeight: '100vh' }}>
          <img
             src={combineUrl(album.imageCover)}
             alt=""
@@ -15,12 +15,12 @@ export default function AlbumIntro({ album }) {
             className="absolute top-0 left-0 w-full h-full"
             style={{
                backgroundColor: album.mainColor,
-               opacity: 0.65,
+               opacity: 0.6,
                zIndex: -1
             }}
          ></div>
-         <div className="relative text-white text-center flex flex-col items-center justify-center py-24 px-10">
-            <h3 className="text-[6rem] font-bold font-cousine uppercase tracking-wide mt-30">
+         <div className="relative text-white text-center flex flex-col items-center justify-center py-40">
+            <h3 className="text-[6.5rem] font-bold font-oswald uppercase tracking-wide">
                {album.name}
             </h3>
 

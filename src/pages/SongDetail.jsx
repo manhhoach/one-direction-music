@@ -70,14 +70,13 @@ export default function SongDetail() {
                   zIndex: -1
                }}
             ></div>
-            <div className="relative text-white text-center flex justify-between mx-auto">
+            <div className="relative text-white text-center flex justify-between mx-auto pt-50">
                <ArrowButton type={'left'} onClick={() => redirectToSong(song.prevSongSlug)} />
                <div className="w-9/10">
 
-
                   <h3 style={{
-                     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6), -2px -2px 4px rgba(0, 0, 0, 0.6)'
-                  }} className="text-[6rem] font-bold font-cousine uppercase tracking-wide mt-50 mb-5">
+                     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(0, 0, 0, 0.4)'
+                  }} className="text-[6rem] font-bold font-oswald uppercase tracking-wide">
                      {song.name}
                   </h3>
 
@@ -100,10 +99,13 @@ export default function SongDetail() {
             </div>
 
          </div>
-         <div className="mt-5 mb-5">
-            <p className="link-custom mb-5">Lyrics</p>
-            <div className="text-center text-3xl font-times tracking-wide leading-relaxed" dangerouslySetInnerHTML={{ __html: song.lyrics }} />
-         </div>
+         {
+            song.lyrics && (<div className="mt-5 mb-5">
+               <p className="link-custom mb-5">Lyrics</p>
+               <div className="text-center text-3xl font-times tracking-wide leading-relaxed" dangerouslySetInnerHTML={{ __html: song.lyrics }} />
+            </div>)
+         }
+
       </>
 
    );
