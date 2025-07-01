@@ -6,7 +6,7 @@ const StyledLink = styled(Link)`
   font-family: var(--font-times);
   cursor: pointer;
   font-size: ${({ fontSize }) => fontSize || '2rem'};
-  line-height: 3.6rem;
+  line-height: 3.5rem;
   letter-spacing: 0.1rem;
 
   &:hover{

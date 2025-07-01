@@ -11,7 +11,6 @@ import {
 import { useEffect, useState } from "react";
 import ImageUpload from "../../../components/ImageUpload";
 import { uploadImage } from "../../../services/uploadService";
-const { TextArea } = Input;
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import dayjs from "dayjs";
@@ -117,12 +116,14 @@ export default function SongForm({ initialValues, onSubmit }) {
                   name="lyrics"
                   label="Lyrics"
                >
-                  <ReactQuill
-                     style={{ height: '250px' }}
-                     theme="snow"
-                     value={form.getFieldValue('lyrics')}
-                     onChange={(value) => form.setFieldValue('lyrics', value)}
-                  />
+                  {form.getFieldValue('lyrics') !== undefined && (
+                     <ReactQuill
+                        style={{ height: '250px' }}
+                        theme="snow"
+                        value={form.getFieldValue('lyrics')}
+                        onChange={(value) => form.setFieldValue('lyrics', value)}
+                     />
+                  )}
                </Form.Item>
             </Col>
          </Row>

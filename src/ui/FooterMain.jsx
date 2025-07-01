@@ -28,10 +28,11 @@ export default function FooterMain() {
                   wrap
                   className="flex justify-center md:space-x-4 lg:space-x-6"
                >
-                  <BiLogoFacebook className="icon-footer text-base md:text-lg lg:text-xl xl:text-2xl cursor-pointer hover:scale-110 transition-transform duration-200" />
-                  <BiLogoTwitter className="icon-footer text-base md:text-lg lg:text-xl xl:text-2xl cursor-pointer hover:scale-110 transition-transform duration-200" />
-                  <BiLogoYoutube className="icon-footer text-base md:text-lg lg:text-xl xl:text-2xl cursor-pointer hover:scale-110 transition-transform duration-200" />
-                  <BiLogoInstagram className="icon-footer text-base md:text-lg lg:text-xl xl:text-2xl cursor-pointer hover:scale-110 transition-transform duration-200" />
+                  <BiLogoFacebook className="icon-footer text-sm md:text-base lg:text-lg xl:text-xl cursor-pointer hover:scale-110 transition-transform duration-200" />
+                  <BiLogoTwitter className="icon-footer text-sm md:text-base lg:text-lg xl:text-xl cursor-pointer hover:scale-110 transition-transform duration-200" />
+                  <BiLogoYoutube className="icon-footer text-sm md:text-base lg:text-lg xl:text-xl cursor-pointer hover:scale-110 transition-transform duration-200" />
+                  <BiLogoInstagram className="icon-footer text-sm md:text-base lg:text-lg xl:text-xl cursor-pointer hover:scale-110 transition-transform duration-200" />
+
                </Space>
             </Row>
 

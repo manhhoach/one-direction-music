@@ -7,7 +7,7 @@ export default function ArrowButton({ type, onClick }) {
 
    return (
       <div onClick={onClick} style={{ color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'end' }}>
-         <IconComponent size={100} style={{ transform: 'scaleY(1.6)' }} />
+         <IconComponent size={100} style={{ transform: 'scaleY(1.4)' }} />
       </div>
    )
 }

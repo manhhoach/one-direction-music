@@ -53,7 +53,7 @@ export default function SongDetail() {
    return (
       <>
          <BackToAlbum>
-            <LinkSongName fontSize={'1.3rem'} href={`/music/albums/${albumSlug}`}>{song.albumName}</LinkSongName>
+            <LinkSongName fontSize={'1.2rem'} href={`/music/albums/${albumSlug}`}>{song.albumName}</LinkSongName>
          </BackToAlbum>
          <div className="w-full relative" style={{ minHeight: '100vh' }}>
             <img
