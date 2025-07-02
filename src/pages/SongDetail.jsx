@@ -17,7 +17,7 @@ export default function SongDetail() {
    const currentPath = location.pathname;
    const navigate = useNavigate();
 
-   const [song, setSong] = useState({})
+   const [song, setSong] = useState(null)
    const [isLoading, setIsLoading] = useState(true)
    const fetchSong = async () => {
       try {
