@@ -7,7 +7,6 @@ import formatDate from "../utils/formatDate";
 import ArrowButton from "../components/ArrowButton";
 import { useLocation } from "react-router-dom";
 import Loading from "../ui/Loading";
-import LinkSongName from "../components/LinkSongName";
 import { useNavigate } from "react-router-dom";
 import BackToAlbum from "../ui/BackToAlbum";
 
@@ -52,8 +51,7 @@ export default function SongDetail() {
 
    return (
       <>
-         <BackToAlbum>
-            <LinkSongName fontSize={'1.2rem'} href={`/music/albums/${albumSlug}`}>{song.albumName}</LinkSongName>
+         <BackToAlbum albumName={song.albumName} albumSlug={albumSlug}>
          </BackToAlbum>
          <div className="w-full relative" style={{ minHeight: '100vh' }}>
             <img

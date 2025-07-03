@@ -5,7 +5,6 @@ import NotFound from "../ui/NotFound"
 import { getSongPhotosBySlug } from './../services/songService'
 import combineUrl from "../utils/combineUrl"
 import ArrowButton from './../components/ArrowButton'
-import LinkSongName from "../components/LinkSongName"
 import BackToAlbum from './../ui/BackToAlbum'
 
 export default function SongPhotos() {
@@ -47,8 +46,7 @@ export default function SongPhotos() {
 
    return (
       <>
-         <BackToAlbum>
-            <LinkSongName href={`/music/albums/${albumSlug}`} fontSize={'1.3rem'} >Back to album</LinkSongName>
+         <BackToAlbum albumName={'Back to album'} albumSlug={albumSlug}>
          </BackToAlbum>
          <div className='w-full relative h-screen' style={{ minHeight: '100vh' }}>
             <img

@@ -5,7 +5,6 @@ import Loading from "../ui/Loading"
 import NotFound from "../ui/NotFound"
 import PhotoInAlbum from "../ui/PhotoInAlbum"
 import BackToAlbum from "../ui/BackToAlbum"
-import LinkSongName from "../components/LinkSongName"
 
 export default function AlbumPhotos() {
    const { slug } = useParams()
@@ -34,8 +33,7 @@ export default function AlbumPhotos() {
    }
    return (
       <>
-         <BackToAlbum>
-            <LinkSongName fontSize={'1.3rem'} href={`/music/albums/${slug}`}>{album.name}</LinkSongName>
+         <BackToAlbum albumName={album.name} albumSlug={slug}>
          </BackToAlbum>
          <div className="flex flex-col items-center justify-center w-full">
             {
