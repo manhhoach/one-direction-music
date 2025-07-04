@@ -9,6 +9,7 @@ import { useLocation } from "react-router-dom";
 import Loading from "../ui/Loading";
 import { useNavigate } from "react-router-dom";
 import BackToAlbum from "../ui/BackToAlbum";
+import { message } from "antd";
 
 export default function SongDetail() {
    const { songSlug, albumSlug } = useParams();
@@ -24,6 +25,7 @@ export default function SongDetail() {
          setSong(res.data.data)
       }
       catch {
+         message.error('Failed to fetch data');
       }
       finally {
          setIsLoading(false)

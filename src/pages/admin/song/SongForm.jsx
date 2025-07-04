@@ -30,7 +30,7 @@ export default function SongForm({ initialValues, onSubmit }) {
 
    useEffect(() => {
       if (initialValues) {
-         form.setFieldValue({ ...initialValues })
+         form.setFieldsValue({ ...initialValues })
          if (initialValues.photos) {
             const photoFiles = initialValues.photos.map((url, index) => {
                return {
@@ -116,7 +116,7 @@ export default function SongForm({ initialValues, onSubmit }) {
                   name="lyrics"
                   label="Lyrics"
                >
-                  {form.getFieldValue('lyrics') !== undefined && (
+                  {(
                      <ReactQuill
                         style={{ height: '250px' }}
                         theme="snow"

@@ -7,10 +7,11 @@ import SocialIcon from '../components/SocialIcon'
 import SongList from "../components/SongList"
 import combineUrl from './../utils/combineUrl'
 import Loading from "../ui/Loading"
+import { message } from "antd"
 
 export default function AlbumDetail() {
    const { slug } = useParams()
-   const [album, setAlbum] = useState({})
+   const [album, setAlbum] = useState(null)
    const [isLoading, setIsLoading] = useState(true)
    const location = useLocation();
    const photosPath = `${location.pathname}/photos`;
@@ -21,6 +22,7 @@ export default function AlbumDetail() {
          setAlbum(res.data.data)
       }
       catch {
+         message.error('Failed to fetch data');
       }
       finally {
          setIsLoading(false)
@@ -41,7 +43,7 @@ export default function AlbumDetail() {
             <img
                src={combineUrl(album.imageCover)}
                alt=""
-               className="absolute top-0 left-0 w-full h-full object-fit"
+               className="absolute top-0 left-0 w-full h-full"
             />
             <p style={{
                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6), -2px -2px 4px rgba(0, 0, 0, 0.6)'

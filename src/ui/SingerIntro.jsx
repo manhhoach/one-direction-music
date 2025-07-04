@@ -6,7 +6,8 @@ import combineUrl from './../utils/combineUrl'
 export default function SingerIntro({ singer, i }) {
    const [index, setIndex] = useState(0);
    const isSwitched = i % 2 === 0;
-   const handleScroll = (e) => {
+   
+   const handleScroll = () => {
       const scrollTop = window.scrollY; // Vị trí cuộn của cửa sổ
       const documentHeight = document.documentElement.scrollHeight; // Chiều cao toàn bộ trang
       const windowHeight = window.innerHeight; // Chiều cao của cửa sổ trình duyệt
@@ -20,10 +21,12 @@ export default function SingerIntro({ singer, i }) {
          setIndex((prev) => (prev + 1) % singer.images.length);
       }
    };
+
    useEffect(() => {
       window.addEventListener('wheel', handleScroll, { passive: true });
       return () => window.removeEventListener('wheel', handleScroll);
    }, [singer.images.length]);
+
    return (
       <div className={`w-full h-screen flex  ${isSwitched ? 'flex-row' : 'flex-row-reverse'}`}>
          <div className="w-1/2 h-full relative">

@@ -31,7 +31,7 @@ export default function SingerManager() {
             pageSize,
             total: res.data.total || 0,
          });
-      } catch (err) {
+      } catch {
          message.error('Failed to fetch singers');
       } finally {
          setLoading(false);
@@ -53,7 +53,7 @@ export default function SingerManager() {
          }
          fetchSingers(pagination.page, pagination.pageSize);
          setIsModalOpen(false);
-      } catch (err) {
+      } catch {
          message.error('Operation failed');
       }
    };

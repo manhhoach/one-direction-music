@@ -12,7 +12,7 @@ const RequireAuth = () => {
          try {
             const data = await checkLogin();
             setIsAuthenticated(data.data); // hoặc data.success tuỳ backend bạn
-         } catch (e) {
+         } catch {
             setIsAuthenticated(false);
          } finally {
             setLoading(false); // ✅ đánh dấu đã check xong

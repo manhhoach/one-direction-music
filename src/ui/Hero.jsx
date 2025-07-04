@@ -4,7 +4,7 @@ export default function Hero() {
          <img
             src="/images/hero-2015-rect-med.jpg"
             alt="One Direction Band"
-            className="w-full h-full object-fit object-center"
+            className="w-full h-full object-center"
          />
 
          <div className="absolute bottom-[20%] left-1/2 transform -translate-x-1/2 w-[60%] sm:w-[60%] md:w-[60%]">

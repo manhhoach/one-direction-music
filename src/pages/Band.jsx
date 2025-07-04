@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import SingerIntro from "./../ui/SingerIntro";
 import { getSingers } from "../services/singerService";
 import Loading from "../ui/Loading";
+import { message } from "antd";
 
 export default function Band() {
    const [singers, setSingers] = useState([])
@@ -12,6 +13,7 @@ export default function Band() {
          setSingers(res.data.data)
       }
       catch {
+         message.error('Failed to fetch data');
       }
       finally {
          setIsLoading(false)

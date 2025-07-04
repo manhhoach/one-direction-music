@@ -6,6 +6,7 @@ import { getSongPhotosBySlug } from './../services/songService'
 import combineUrl from "../utils/combineUrl"
 import ArrowButton from './../components/ArrowButton'
 import BackToAlbum from './../ui/BackToAlbum'
+import { message } from "antd"
 
 export default function SongPhotos() {
    const { songSlug, albumSlug } = useParams()
@@ -19,6 +20,7 @@ export default function SongPhotos() {
          setSong(res.data.data)
       }
       catch {
+         message.error('Failed to fetch data');
       }
       finally {
          setIsLoading(false)
@@ -34,6 +36,7 @@ export default function SongPhotos() {
       return <NotFound></NotFound>
    }
    const fullUrl = combineUrl(song.photos[currentIndex])
+
    function slideImage(type) {
       setCurrentIndex((prevIndex) => {
          if (type === 'incre') {
@@ -52,7 +55,7 @@ export default function SongPhotos() {
             <img
                src={fullUrl}
                alt=""
-               className="absolute top-0 left-0 w-full h-full object-fit"
+               className="absolute top-0 left-0 w-full h-full"
             />
             <div className="flex items-center justify-between h-full">
                <ArrowButton type={'left'} onClick={() => { slideImage('incre') }} />

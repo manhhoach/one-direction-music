@@ -5,6 +5,7 @@ import Loading from "../ui/Loading"
 import NotFound from "../ui/NotFound"
 import PhotoInAlbum from "../ui/PhotoInAlbum"
 import BackToAlbum from "../ui/BackToAlbum"
+import { message } from "antd"
 
 export default function AlbumPhotos() {
    const { slug } = useParams()
@@ -17,6 +18,7 @@ export default function AlbumPhotos() {
          setAlbum(res.data.data)
       }
       catch {
+         message.error('Failed to fetch data');
       }
       finally {
          setIsLoading(false)

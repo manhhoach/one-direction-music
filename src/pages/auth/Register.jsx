@@ -4,7 +4,7 @@ import { register } from '../../services/authService';
 const Register = () => {
    const onFinish = async (values) => {
       try {
-         const data = await register(values);
+         await register(values);
          message.success('Register successfully!');
       } catch (error) {
          message.error(error.response?.data?.message || 'Register failed');
@@ -17,14 +17,14 @@ const Register = () => {
             <Form layout="vertical" onFinish={onFinish}>
                <Form.Item
                   label="Username"
-                  name="Username"
+                  name="username"
                   rules={[{ required: true }]}
                >
                   <Input />
                </Form.Item>
                <Form.Item
                   label="FullName"
-                  name="Fullname"
+                  name="fullname"
                   rules={[{ required: true }]}
                >
                   <Input />

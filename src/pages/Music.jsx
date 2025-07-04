@@ -2,6 +2,7 @@ import { getAlbums } from './../services/albumService'
 import AlbumIntro from '../ui/AlbumIntro'
 import { useEffect, useState } from 'react'
 import Loading from '../ui/Loading'
+import { message } from 'antd'
 
 export default function Music() {
    const [albums, setAlbums] = useState([])
@@ -12,7 +13,7 @@ export default function Music() {
          setAlbums(res)
       }
       catch {
-
+         message.error('Failed to fetch data');
       }
       finally {
          setIsLoading(false)

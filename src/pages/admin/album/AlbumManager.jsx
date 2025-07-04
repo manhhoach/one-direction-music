@@ -28,7 +28,7 @@ export default function AlbumManager() {
             pageSize,
             total: res.data.total || 0,
          });
-      } catch (err) {
+      } catch {
          message.error('Failed to fetch Albums');
       } finally {
          setLoading(false);
@@ -50,7 +50,7 @@ export default function AlbumManager() {
          }
          fetchAlbums(pagination.page, pagination.pageSize);
          setIsModalOpen(false);
-      } catch (err) {
+      } catch {
          message.error('Operation failed');
       }
    };

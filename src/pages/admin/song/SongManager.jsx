@@ -35,7 +35,7 @@ export default function SongManager() {
             pageNumber: metaData.currentPage,
             total: metaData.totalCount
          })
-      } catch (err) {
+      } catch {
          message.error('Failed to fetch Songs');
       } finally {
          setLoading(false);
@@ -64,7 +64,7 @@ export default function SongManager() {
          }
          fetchSongs(pagination.pageNumber, pagination.pageSize);
          setIsModalOpen(false);
-      } catch (err) {
+      } catch {
          message.error('Operation failed');
       }
    };

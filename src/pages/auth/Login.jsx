@@ -18,7 +18,7 @@ const Login = () => {
             <Form layout="vertical" onFinish={onFinish}>
                <Form.Item
                   label="Username"
-                  name="Username"
+                  name="username"
                   rules={[{ required: true }]}
                >
                   <Input />

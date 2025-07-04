@@ -8,7 +8,7 @@ export default function AlbumIntro({ album }) {
          <img
             src={combineUrl(album.imageCover)}
             alt=""
-            className="absolute top-0 left-0 w-full h-full object-fit"
+            className="absolute top-0 left-0 w-full h-full"
             style={{ filter: 'grayscale(100%)', zIndex: -2 }}
          />
          <div

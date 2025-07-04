@@ -13,8 +13,8 @@ const SocialNetworkListInput = ({ value, onChange }) => {
          try {
             const res = await getNetworks();
             setNetworkOptions(res.data.data);
-         } catch (err) {
-            message.error('Exception');
+         } catch {
+            message.error('Failed to fetch data');
          }
       };
       fetchNetwork();
