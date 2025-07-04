@@ -4,7 +4,7 @@ import combineUrl from './../utils/combineUrl'
 
 export default function AlbumIntro({ album }) {
    return (
-      <div className="w-full relative square-mobile" style={{ minHeight: '100vh' }}>
+      <div className="w-full relative square-mobile min-h-screen">
          {/* Background Image */}
          <img
             src={combineUrl(album.imageCover)}

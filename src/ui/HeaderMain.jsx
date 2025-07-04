@@ -7,12 +7,12 @@ const { Header } = Layout
 const menuItems = [
    {
       key: "music",
-      label: <Link to="/music" className="link-style">MUSIC</Link>,
+      label: <Link to="/music" className="link-style text-[1rem]">MUSIC</Link>,
       className: "menu-item-style",
    },
    {
       key: "band",
-      label: <Link to="/band" className="link-style">BAND</Link>,
+      label: <Link to="/band" className="link-style text-[1rem]">BAND</Link>,
       className: "menu-item-style",
    },
 ]
