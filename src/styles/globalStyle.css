@@ -166,3 +166,15 @@
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
    /* thay cho text-shadow-custom */
 }
+
+/*
+responsive
+*/
+@media (max-width: 640px) {
+   .square-mobile {
+      min-height: 50vh !important;
+      width: 100vw !important;
+      min-width: 100vw !important;
+      height: auto !important;
+   }
+}
