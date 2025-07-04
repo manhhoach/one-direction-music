@@ -55,56 +55,63 @@ export default function SongDetail() {
       <>
          <BackToAlbum albumName={song.albumName} albumSlug={albumSlug}>
          </BackToAlbum>
-         <div className="w-full relative" style={{ minHeight: '100vh' }}>
+         <div className="w-full relative min-h-screen square-mobile">
             <img
                src={combineUrl(song.albumImageCover)}
                alt=""
-               className="absolute top-0 left-0 w-full h-full object-fill"
+               className="absolute top-0 left-0 w-full h-full"
                style={{ filter: 'grayscale(5%)', zIndex: -2 }}
             />
             <div
                className="absolute top-0 left-0 w-full h-full"
                style={{
                   backgroundColor: song.mainColor,
-                  opacity: 0.5,
-                  zIndex: -1
+                  opacity: 0.7,
+                  zIndex: -1,
                }}
             ></div>
-            <div className="relative text-white text-center flex justify-between mx-auto pt-50">
-               <ArrowButton type={'left'} onClick={() => redirectToSong(song.prevSongSlug)} />
-               <div className="w-9/10">
 
-                  <h3 style={{
-                     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(0, 0, 0, 0.4)'
-                  }} className="text-[6rem] font-bold font-oswald uppercase tracking-wide">
+            <ArrowButton type="left" onClick={() => redirectToSong(song.prevSongSlug)} />
+            <div className="relative w-8/10 mx-auto text-white text-center flex justify-center items-center pt-40">
+
+               <div className="uppercase text-center">
+                  <h3
+                     style={{
+                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(0, 0, 0, 0.4)',
+                     }}
+                     className="text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold font-oswald tracking-wide leading-tight"
+                  >
                      {song.name}
                   </h3>
-
+                  <div className="font-source-code-pro flex flex-col items-center justify-center gap-8 text-white mt-5 sm:px-8 md:px-16">
+                     {song.releaseDate && (
+                        <div className="text-lg sm:text-xl md:text-2xl max-w-3xl">
+                           <p>Release date</p>
+                           <p>{formatDate(song.releaseDate)}</p>
+                        </div>
+                     )}
+                     {song.authors && (
+                        <div className="text-lg sm:text-xl md:text-2xl max-w-3xl">
+                           <p>Written by</p>
+                           <div className="mx-auto">{song.authors}</div>
+                        </div>
+                     )}
+                  </div>
                </div>
-               <ArrowButton type={'right'} onClick={() => redirectToSong(song.nextSongSlug)} />
-            </div>
-            <div className="flex flex-col items-center justify-center gap-10 text-center text-white">
-               {
-                  song.releaseDate && (<div className="font-source-code-pro text-3xl">
-                     <p className="uppercase">Release date</p>
-                     <p>{formatDate(song.releaseDate)}</p>
-                  </div>)
-               }
-               {
-                  song.authors && (<div className="font-source-code-pro text-3xl w-4/5">
-                     <p className="uppercase">Written by</p>
-                     <div className="mx-auto">{song.authors}</div>
-                  </div>)
-               }
-            </div>
 
+            </div>
+            <ArrowButton type="right" onClick={() => redirectToSong(song.nextSongSlug)} />
          </div>
-         {
-            song.lyrics && (<div className="mt-5 mb-5">
-               <p className="link-custom">Lyrics</p>
-               <div className="text-center text-[1.5rem] font-times tracking-wide leading-normal" dangerouslySetInnerHTML={{ __html: song.lyrics }} />
-            </div>)
-         }
+
+         {song.lyrics && (
+            <div className="mt-8 mb-8 px-4 sm:px-8 md:px-16 max-w-4xl mx-auto">
+               <p className="link-custom mb-4">Lyrics</p>
+               <div
+                  className="text-center text-base sm:text-lg md:text-2xl font-times tracking-wide leading-relaxed whitespace-pre-wrap"
+                  dangerouslySetInnerHTML={{ __html: song.lyrics }}
+               />
+            </div>
+         )}
 
       </>
 

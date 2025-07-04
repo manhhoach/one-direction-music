@@ -7,7 +7,7 @@ const StyledLink = styled(Link)`
   cursor: pointer;
   font-size: ${({ fontSize }) => fontSize || '2rem'};
   line-height: ${({ fontSize }) =>
-      fontSize ? 'unset' : '3.5rem'}; /* dùng line-height mặc định nếu không custom */
+    fontSize ? 'unset' : '3.5rem'}; /* dùng line-height mặc định nếu không custom */
   letter-spacing: 0.1rem;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -19,8 +19,8 @@ const StyledLink = styled(Link)`
 
   /* Responsive fallback if fontSize not provided */
   ${({ fontSize }) =>
-      !fontSize &&
-      `
+    !fontSize &&
+    `
     @media (max-width: 640px) {
       font-size: 1.4rem;
       line-height: 2.4rem;
@@ -39,14 +39,14 @@ const StyledLink = styled(Link)`
 `;
 
 export default function LinkSongName({ href, children, fontSize, mainColor, color }) {
-   return (
-      <StyledLink
-         to={href}
-         fontSize={fontSize}
-         maincolor={mainColor}
-         color={color}
-      >
-         {children}
-      </StyledLink>
-   );
+  return (
+    <StyledLink
+      to={href}
+      fontSize={fontSize}
+      maincolor={mainColor}
+      color={color}
+    >
+      {children}
+    </StyledLink>
+  );
 }
