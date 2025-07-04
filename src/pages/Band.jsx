@@ -27,7 +27,7 @@ export default function Band() {
       return <Loading />
    }
    return (
-      <div className="">
+      <div>
          {
             singers && singers.map((singer, i) => <SingerIntro i={i} key={singer.id} singer={singer} />)
          }
